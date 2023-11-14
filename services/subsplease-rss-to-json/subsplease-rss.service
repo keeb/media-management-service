@@ -1,0 +1,8 @@
+[Unit]
+Description=SubsPlease RSS to JSON Service
+
+[Service]
+ExecStart=/home/keeb/code/projects/subsplease-rss-to-json/run.sh
+
+[Install]
+WantedBy=multi-user.target

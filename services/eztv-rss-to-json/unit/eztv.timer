@@ -1,0 +1,9 @@
+[Unit]
+Description=EZTV RSS to JSON
+
+[Timer]
+OnCalendar=*:0/1
+Unit=eztv-rss.service
+
+[Install]
+WantedBy=timers.target
