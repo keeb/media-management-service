@@ -5,7 +5,7 @@ removes useless files in subdir
 from lib.file import crawl_for_files, ismedia
 import os
 
-root_folder = "/mnt/nami/media/video/shows"
+root_folder = "/mnt/nami/media/video/movies"
 
 files = crawl_for_files(root_folder)
 
