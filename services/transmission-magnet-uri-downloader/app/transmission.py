@@ -27,13 +27,15 @@ class TransmissionRequest:
             self.make_request(payload, retry=True)
 
             return response
+
+        return response
         
     def torrent_add(self, magnet_uri):
         magnet_payload = self._generate_magnet_payload(magnet_uri)
         self.make_request(magnet_payload)
        
     def stats(self):
-        payload = self._generate_stats_payload(self)
+        payload = self._generate_stats_payload()
         r = self.make_request(payload)
         return r
 
