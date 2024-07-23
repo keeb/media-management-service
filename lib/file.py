@@ -4,9 +4,9 @@ import random
 def get_folder_contents(path): 
     return os.listdir(path)
 
-def crawl_for_files(folder):
+def crawl_for_files(folder) -> list:
     data = []
-    if not check_folder(folder): return None
+    if not check_folder(folder): return []
     for file in os.listdir(folder):
         combined = os.path.join(folder, file)
         if os.path.isdir(combined):
@@ -83,6 +83,18 @@ def issubtitle(file):
     if get_extension(file.lower()) in sub_extensions:
         return True
     return False  
+
+def isarchive(file):
+    archive_extensions = [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".cbz"]
+    if get_extension(file.lower()) in archive_extensions:
+        return True
+    return False
+
+def isimage(file):
+    image_extensions = [".jpg", ".jpeg", ".png", ".gif"]
+    if get_extension(file.lower()) in image_extensions:
+        return True
+    return False
 
 def isiso(file):
     iso_extensions = [".iso", ".avhdx", ".vhdx", ".img", ".rar"]
