@@ -39,7 +39,7 @@ class Show:
         for i in self.seasons:
             if i.number() == season: return i
         
-        raise("Not Found")       
+        raise Exception("Not Found")       
 
 
     def save(self, where):

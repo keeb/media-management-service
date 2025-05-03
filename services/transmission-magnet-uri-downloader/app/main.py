@@ -4,7 +4,7 @@ import json
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-from app.transmission import TransmissionRequest as tr
+from lib.transmission import TransmissionRequest as tr
 
 import os
 

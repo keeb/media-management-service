@@ -1,5 +1,11 @@
 import os
 import random
+import time
+import shutil
+import logging
+from typing import Optional
+
+logger = logging.getLogger(__name__)
 
 def get_folder_contents(path): 
     return os.listdir(path)
@@ -28,6 +34,9 @@ def crawl_for_folders(folder):
             for subitem in crawl_for_folders(combined):
                 data.append(subitem)
     return data
+
+def get_file_name(file):
+    return os.path.basename(file)
 
 def get_random_image(folder):
     photos = []
@@ -110,9 +119,87 @@ def ismedia(file):
     if isiso(file): return True
     return False
 
-def check_folder(folder):
+def check_folder(path: str) -> bool:
+    """Check if folder exists."""
+    return os.path.exists(path) and os.path.isdir(path)
+
+def safe_delete_file(path: str) -> bool:
+    """Safely delete a single file.
+    
+    Args:
+        path: Path to file to delete
+        
+    Returns:
+        bool: True if file was deleted, False if error
+    """
     try:
-        os.listdir(folder)
+        if os.path.exists(path) and os.path.isfile(path):
+            os.chmod(path, 0o666)  # Make file writable
+            os.remove(path)
+            return True
+    except Exception as e:
+        logger.error(f"Error deleting file {path}: {e}")
+    return False
+
+def safe_delete_directory(path: str) -> bool:
+    """Safely delete a directory and all its contents.
+    
+    Args:
+        path: Path to directory to delete
+        
+    Returns:
+        bool: True if directory was deleted, False if error
+    """
+    try:
+        if not os.path.exists(path) or not os.path.isdir(path):
+            return True  # Already gone
+            
+        # First list all contents
+        print(f"Removing directory: {path}")
+        contents = os.listdir(path)
+        if contents:
+            print("Directory contents:")
+            for item in contents:
+                print(f"  {item}")
+        
+        # Delete all files first
+        for item in contents:
+            item_path = os.path.join(path, item)
+            if os.path.isfile(item_path):
+                if not safe_delete_file(item_path):
+                    return False
+            elif os.path.isdir(item_path):
+                if not safe_delete_directory(item_path):
+                    return False
+        
+        # Verify directory is empty
+        remaining = os.listdir(path)
+        if remaining:
+            print(f"Error: Directory not empty after deletion: {remaining}")
+            return False
+            
+        # Remove the empty directory
+        os.rmdir(path)
         return True
-    except:
+        
+    except Exception as e:
+        print(f"Error deleting directory {path}: {e}")
+        return False
+
+def safe_move_file(source: str, dest: str) -> bool:
+    """Safely move a file, creating destination directory if needed.
+    
+    Args:
+        source: Source file path
+        dest: Destination file path
+        
+    Returns:
+        bool: True if move successful, False otherwise
+    """
+    try:
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.move(source, dest)
+        return True
+    except Exception as e:
+        logger.error(f"Error moving file {source}: {e}")
         return False

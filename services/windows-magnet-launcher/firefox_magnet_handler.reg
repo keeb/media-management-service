@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\magnet]
+@="URL:Magnet Protocol"
+"URL Protocol"=""
+"Content Type"="application/x-magnet"
+
+[HKEY_CLASSES_ROOT\magnet\DefaultIcon]
+@="\"X:\\projects\\media-management-service\\services\\windows-magnet-launcher\\magnet-launcher.exe\",0"
+
+[HKEY_CLASSES_ROOT\magnet\shell]
+@="open"
+
+[HKEY_CLASSES_ROOT\magnet\shell\open]
+
+[HKEY_CLASSES_ROOT\magnet\shell\open\command]
+@="\"X:\\projects\\media-management-service\\services\\windows-magnet-launcher\\magnet-launcher.exe\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\magnet]
+@="URL:Magnet Protocol"
+"URL Protocol"=""
+"Content Type"="application/x-magnet"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\magnet\DefaultIcon]
+@="\"X:\\projects\\media-management-service\\services\\windows-magnet-launcher\\magnet-launcher.exe\",0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\magnet\shell]
+@="open"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\magnet\shell\open\command]
+@="\"X:\\projects\\media-management-service\\services\\windows-magnet-launcher\\magnet-launcher.exe\" \"%1\"" 
