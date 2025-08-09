@@ -1,0 +1,127 @@
+# Parse Helper - Video Filename Structures
+
+Based on analysis of files in /mnt/nami/media/video, here are the unique filename patterns identified:
+
+## Movies
+
+### Standard Movie Patterns
+- Title.Year.Quality.Source.Codec.Audio-Group.ext
+  * Example: The.Nun.II.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mkv
+  * Example: Casper.1995.1080p.BluRay.x264.YIFY.mp4
+
+- Title Year Quality Source Codec.ext
+  * Example: Phenomenon 1996 DvDrip[Eng]-greenbud1969.avi
+  * Example: Doctor Strange (2016) 1080p.mp4
+
+### Special Characters/Colons in Titles
+- Title:.Subtitle.Year.Quality.Source.Codec.Group.ext
+  * Example: Ace.Ventura:.When.Nature.Calls.1995.1080p.BluRay.x264.YIFY.mp4
+
+### Language/Edition Variants
+- Title.Year.Edition.Quality.Language.Source.Codec.Audio.Group.ext
+  * Example: Street.Fighter.1994.1080p.ITA-ENG.BluRay.x265.AAC-V3SP4EV3R.mkv
+  * Example: Jennifer's.Body.2009.Unrated.BluRay.1080p.x264.AAC.5.1.-.Hon3y.mkv
+
+### Anime Movie Format
+- Series - Movie ## - Title (Audio).ext
+  * Example: Dragon Ball Z - Movie 03 - Tree of Might (Dual-Audio).mkv
+  * Example: Dragon Ball Z - Special 2 - The History of Trunks.mkv
+
+### Legacy/Simple Format
+- Title with spaces Year Quality codec Group.ext
+  * Example: Book of Dragons 2011 720p BDRip x264 -MgB.mp4
+
+## Anime Series
+
+### Fansub Release Pattern
+- [Group] Series - Episode [Hash].ext
+  * Example: [Erai-raws] Boruto - Naruto Next Generations - 70 [1080p][Multiple Subtitle].mkv
+  * Example: [EMBER] Vanitas no Karte - 17.mkv
+
+### Episode Number Only
+- [Group] Series - Episode.ext
+  * Example: [Judas] One Piece - 707.mkv
+  * Example: [Judas] One Piece - 0930.mkv
+
+### SubsPlease Pattern
+- [SubsPlease] Series - Episode (Quality) [Hash].ext
+  * Example: [SubsPlease] Kumo desu ga, Nani ka - 11 (1080p) [0136CD52].mkv
+
+### Season/Episode Pattern
+- Series - Season##Episode## - Title.ext
+  * Example: Sword Art Online - S01E13 - Edge Of Hell's Abyss.mkv
+  * Example: Sword Art Online - S02E17 - Excalibur.mkv
+
+### Legacy Anime Pattern
+- Series Episode.ext
+  * Example: Bleach 75.mkv
+  * Example: Full Metal Alchemist Brotherhood - 01.mkv
+
+### Special Series Format
+- [Group] Series Season - Episode [Quality] [codec] [uploader].ext
+  * Example: [AnimeRG] Naruto Shippuden - 001 [720p] [x265] [pseudo].mkv
+
+## TV Shows
+
+### Standard TV Format
+- Show.Season##Episode##.Title.Quality.Source.Codec-Group.ext
+  * Example: Better Call Saul S01E10 Marco (1080p x265 10bit Joy).mkv
+  * Example: Psych.S03E05.1080p.WEBRip.x265-RARBG.mp4
+
+### Network Branded
+- Show.S##E##.Title.Quality.Network.Source.Audio.Codec.-Group.ext
+  * Example: American.Dad.S07E05.White.Rice.1080p.DSNP.WEBRip.DDP.5.1.H.265.-EDGE2020.mkv
+
+### Simple Season Format
+- Show Season # Episode ## - Title.ext
+  * Example: The West Wing Season 5 Episode 11 - The Benign Prerogative.avi
+  * Example: House MD Season 8 Episode 06 - Parents.avi
+
+### Legacy TV Format
+- Show - S##E## - Title (Quality codec).ext
+  * Example: Batman T.A.S - S01 E34 - I Am The Night (1080p - BluRay).mp4
+
+### Specialized Series Format
+- Series Name - Ep. ## - Title (Year - Quality Source).ext
+  * Example: Sonic Underground - Ep. 27 - Flying Fortress (720p WebRip).mp4
+  * Example: Mortal Kombat CONQUEST - Ep. 14 - Festival Of Death (1998 - 480p DVDRip).avi
+
+### Torrent Site Tagged
+- Show.S##E##.Quality.Source.Codec[site.ext].ext
+  * Example: Law.And.Order.Organized.Crime.S02E09.WEBRip.x265-ION265[eztv.re].mp4
+
+## Common Patterns Across All Types
+
+### Quality Indicators
+- 1080p, 720p, 2160p, 4K
+- BluRay, BrRip, WEBRip, WEB-DL, DVDRip, HDTV
+
+### Codecs
+- x264, x265, H264, H.265, HEVC, AVC
+
+### Audio
+- AAC, AAC5.1, DTS, DD5.1, DDP.5.1, AC3
+
+### Sources
+- BluRay, WEBRip, WEB-DL, HDTV, DVDRip
+
+### Groups/Uploaders
+- YIFY, RARBG, YTS.MX, GalaxyRG, Erai-raws, SubsPlease, EMBER, Judas
+
+### File Extensions
+- .mkv (most common for high quality)
+- .mp4 (common for smaller files)
+- .avi (older/legacy files)
+
+## Special Cases
+
+### Uncensored Content
+- Series.S##E##.Quality.UNCENSORED.Network.Source.Audio.Codec.Subs-Group.ext
+  * Example: Kakushite.Makina-san.S01E05.1080p.UNCENSORED.ADN.WEB-DL.DUAL.AAC2.0.H.264.MSubs-ToonsHub.mkv
+
+### Multi-part Episodes
+- Series S##E## Title (Part #) (Quality codec).ext
+
+### Extras/Specials
+- Series/Featurettes/Category/Title.ext
+  * Example: Futurama/s3/Featurettes/Intro Commercials/Glagnars Human Rinds.mkv

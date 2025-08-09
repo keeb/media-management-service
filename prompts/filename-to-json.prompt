@@ -1,0 +1,38 @@
+# Media Filename Parser
+
+Parse TV show, anime, and movie filenames into structured data.
+
+## Input Format
+Filename (with or without extension)
+
+## Output Format
+Return JSON with these fields:
+- `media_type`: "tv_show", "anime", or "movie"
+- `title`: Clean title (spaces, proper capitalization)
+- `season`: Season number (integer, null for movies)
+- `episode`: Episode number (integer, null for movies)
+- `episode_title`: Episode title if present (null if not found)
+- `year`: Release year if present (integer, null if not found)
+- `confidence`: High/Medium/Low based on pattern match quality
+
+## Detection Rules
+**Movie**: Single file, often has year, no season/episode markers
+**Anime**: Japanese titles, episode ranges like "01-12", "OVA", "Special"
+**TV Show**: Standard S##E## or #x## patterns, Western show names
+
+## Common Patterns
+- TV: `Show.Name.S01E01.Episode.Title.ext`
+- Anime: `Anime Title - 01 [1080p].mkv` or `Anime.Title.E01.ext`
+- Movie: `Movie Title (2023) 1080p.mp4`
+
+## Examples
+Input: `The.Sopranos.S01E01.Pilot.avi`
+Output: `{"media_type": "tv_show", "title": "The Sopranos", "season": 1, "episode": 1, "episode_title": "Pilot", "year": null, "confidence": "High"}`
+
+Input: `Attack on Titan - 01 [1080p].mkv`
+Output: `{"media_type": "anime", "title": "Attack on Titan", "season": null, "episode": 1, "episode_title": null, "year": null, "confidence": "High"}`
+
+Input: `The Matrix (1999) 1080p BluRay.mp4`
+Output: `{"media_type": "movie", "title": "The Matrix", "season": null, "episode": null, "episode_title": null, "year": 1999, "confidence": "High"}`
+
+Parse the filename and return only the JSON response.

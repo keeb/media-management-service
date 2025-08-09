@@ -119,6 +119,22 @@ def ismedia(file):
     if isiso(file): return True
     return False
 
+def should_ignore_for_media_parsing(file):
+    """Check if file should be ignored when parsing media files.
+    
+    This includes subtitle files and directories that don't contain
+    parseable media content.
+    
+    Args:
+        file: File path or name to check
+        
+    Returns:
+        bool: True if file should be ignored for media parsing
+    """
+    if issubtitle(file):
+        return True
+    return False
+
 def check_folder(path: str) -> bool:
     """Check if folder exists."""
     return os.path.exists(path) and os.path.isdir(path)

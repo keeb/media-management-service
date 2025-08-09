@@ -1,0 +1,16 @@
+[Unit]
+Description=Media Management Service - Torrent Cleaner
+After=network.target
+
+[Service]
+Type=oneshot
+User=keeb
+Group=keeb
+WorkingDirectory=/storage/02/code/projects/media-management-service
+Environment=PYTHONPATH=/storage/02/code/projects/media-management-service/lib
+ExecStart=/usr/bin/python3 services/cleaner/cleaner.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

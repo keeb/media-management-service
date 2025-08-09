@@ -51,6 +51,25 @@ class TransmissionRequest:
             return True
         return False
 
+    def remove_complete_torrents(self):
+        payload = self._torrent_list_with_status_payload()
+        r = self.make_request(payload)
+        
+        if r.status_code == 200:
+            response_data = json.loads(r.text)
+            torrents = response_data.get("arguments", {}).get("torrents", [])
+            
+            complete_torrent_ids = []
+            for torrent in torrents:
+                if torrent.get("status") == 0:
+                    complete_torrent_ids.append(torrent.get("id"))
+            
+            if complete_torrent_ids:
+                remove_payload = self._generate_remove_payload(complete_torrent_ids)
+                return self.make_request(remove_payload)
+        
+        return r
+
     def _generate_stats_payload(self):
         payload = {
             "method": "session-stats",
@@ -73,6 +92,25 @@ class TransmissionRequest:
             "method": "torrent-get",
             "arguments": {
                 "fields": ["id", "name", "magnetLink"]
+            }
+        }
+        return json.dumps(payload)
+
+    def _torrent_list_with_status_payload(self):
+        payload = {
+            "method": "torrent-get",
+            "arguments": {
+                "fields": ["id", "name", "status"]
+            }
+        }
+        return json.dumps(payload)
+
+    def _generate_remove_payload(self, torrent_ids):
+        payload = {
+            "method": "torrent-remove",
+            "arguments": {
+                "ids": torrent_ids,
+                "delete-local-data": False
             }
         }
         return json.dumps(payload)

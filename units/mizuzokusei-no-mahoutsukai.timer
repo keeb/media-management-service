@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Mizuzokusei no Mahoutsukai Auto Downloader every 6 hours
+Requires=mizuzokusei-no-mahoutsukai.service
+
+[Timer]
+OnCalendar=*-*-* 00,06,12,18:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -112,17 +112,22 @@ def download(filtered_results_list):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python3 show-1080p-magnet.py <show name> <amount|all>")
+        print("Usage: python3 show-1080p-magnet.py <show name> [episodes] [--auto]")
+        print("  --auto: Skip download prompt and download automatically")
         exit(1)
 
     term = sys.argv[1]
+    auto_download = "--auto" in sys.argv
+    
     print("Searching for " + term)
     results = filter_results(search(term), "1080")
 
-    if len(sys.argv) == 3:
-        if "-" in sys.argv[2]:
-            start, stop = sys.argv[2].split("-")
-            results = filter_range(results, int(start), int(stop))
+    if len(sys.argv) >= 3:
+        for arg in sys.argv[2:]:
+            if arg != "--auto" and "-" in arg:
+                start, stop = arg.split("-")
+                results = filter_range(results, int(start), int(stop))
+                break
 
     if len(results) == 0:
         print("No results found")
@@ -139,13 +144,18 @@ if __name__ == '__main__':
             exit(0)
 
     print(f"Found {len(results)} episodes to download")
-    input = input("Download? (y/n): ")
-    if input == "y":
+    
+    if auto_download:
+        print("Auto-downloading...")
         download(results)
     else:
-        print("Not downloading")
-        print(results)
-        exit(0)
+        user_input = input("Download? (y/n): ")
+        if user_input == "y":
+            download(results)
+        else:
+            print("Not downloading")
+            print(results)
+            exit(0)
 
 
 

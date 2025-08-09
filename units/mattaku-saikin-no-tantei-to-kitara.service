@@ -1,0 +1,16 @@
+[Unit]
+Description=Mattaku Saikin no Tantei to Kitara Auto Downloader
+After=network.target
+
+[Service]
+Type=oneshot
+User=keeb
+Group=keeb
+WorkingDirectory=/storage/02/code/projects/media-management-service
+Environment=PYTHONPATH=/storage/02/code/projects/media-management-service
+ExecStart=/usr/bin/python3 services/subsplease-show-page-to-json/show-1080p-magnet.py mattaku-saikin-no-tantei-to-kitara --auto
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+cd /storage/02/code/projects/media-management-service
+export PYTHONPATH=/storage/02/code/projects/media-management-service
+python services/subsplease-show-page-to-json/show-1080p-magnet.py $@
