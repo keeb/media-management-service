@@ -2,16 +2,15 @@
 
 import os
 import subprocess
-import sys
 
-def test_torrent_done_script():
+def test_torrent_done_script(filename):
     """
     Test the torrent-done-script.py by simulating transmission environment variables
     """
     
     # Set up test environment variables that transmission would normally provide
     test_env = os.environ.copy()
-    test_env['TR_TORRENT_NAME'] = 'South Park S27E02 Got A Nut 1080p AMZN WEB-DL DDP5 1 H 264-FLUX[EZTVx.to].mkv'
+    test_env['TR_TORRENT_NAME'] = filename 
     test_env['TR_TORRENT_DIR'] = '/home/keeb/media/video/staging'
     
     script_path = '/storage/02/code/projects/media-management-service/conf/transmission-daemon/torrent-done-script.py'
@@ -52,4 +51,6 @@ def test_torrent_done_script():
         print(f"❌ Error running script: {e}")
 
 if __name__ == '__main__':
-    test_torrent_done_script()
+    files_in_staging = os.listdir('/home/keeb/media/video/staging')
+    for file in files_in_staging:
+        test_torrent_done_script(file)

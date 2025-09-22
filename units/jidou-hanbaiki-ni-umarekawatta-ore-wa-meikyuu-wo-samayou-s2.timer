@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou S2 Auto Downloader every 6 hours
+Requires=jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2.service
+
+[Timer]
+OnCalendar=*-*-* 00,06,12,18:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

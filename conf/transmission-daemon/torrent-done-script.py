@@ -5,7 +5,7 @@ import sys
 from datetime import datetime
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://treehouse:mongo@localhost:27017")
+client = MongoClient("mongodb://treehouse:mongo@100.92.243.19:27017")
 db = client.media
 
 def main():

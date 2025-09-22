@@ -1,0 +1,16 @@
+[Unit]
+Description=Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou S2 Auto Downloader
+After=network.target
+
+[Service]
+Type=oneshot
+User=keeb
+Group=keeb
+WorkingDirectory=/storage/02/code/projects/media-management-service
+Environment=PYTHONPATH=/storage/02/code/projects/media-management-service
+ExecStart=/usr/bin/python3 services/subsplease-show-page-to-json/show-1080p-magnet.py jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2 --auto
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
