@@ -29,6 +29,7 @@ DEFAULT_MONGO_PORT = "27017"
 DEFAULT_MONGO_USERNAME = "treehouse"
 DEFAULT_MONGO_PASSWORD = "mongo"
 DEFAULT_MONGO_DATABASE = "media"
+DEFAULT_MAX_JOBS_PER_RUN = 0  # 0 means unlimited (process all available jobs)
 
 # Configure logging
 logging.basicConfig(
@@ -384,15 +385,32 @@ def main() -> int:
         # Connect to MongoDB
         db = connect_to_mongo()
 
-        # Pop a job from the queue
-        job = pop_job_from_queue(db)
+        # Get maximum jobs per run from environment or use default
+        max_jobs = int(os.getenv("MAX_JOBS_PER_RUN", DEFAULT_MAX_JOBS_PER_RUN))
+        
+        jobs_processed = 0
+        total_failures = 0
 
-        if job:
-            process_job(db, job)
-        else:
-            logger.info("No jobs available in the queue")
+        logger.info(f"Processing jobs (max: {'unlimited' if max_jobs == 0 else max_jobs})")
 
-        logger.info("Media job worker completed successfully")
+        # Process jobs until queue is empty or max jobs reached
+        while max_jobs == 0 or jobs_processed < max_jobs:
+            job = pop_job_from_queue(db)
+            
+            if not job:
+                logger.info("No more jobs available in the queue")
+                break
+                
+            try:
+                process_job(db, job)
+                jobs_processed += 1
+                logger.info(f"Processed {jobs_processed} jobs so far")
+            except Exception as e:
+                total_failures += 1
+                logger.error(f"Job processing failed: {e}")
+                # Continue processing other jobs even if one fails
+
+        logger.info(f"Media job worker completed - Processed: {jobs_processed}, Failed: {total_failures}")
         return 0
 
     except ConnectionError as e:

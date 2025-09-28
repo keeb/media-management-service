@@ -1,0 +1,21 @@
+[Unit]
+Description=LLM Parser and Mover Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=keeb
+Group=keeb
+WorkingDirectory=/home/keeb/git/media-management-service
+Environment=PYTHONPATH=/home/keeb/git/media-management-service
+Environment=MONGO_HOST=10.0.0.12
+Environment=MONGO_PORT=27017
+Environment=MONGO_USERNAME=treehouse
+Environment=MONGO_PASSWORD=mongo
+Environment=MONGO_DATABASE=media
+ExecStart=/home/keeb/git/media-management-service/env/bin/python services/llm-parser-and-mover/run_until_empty.py
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

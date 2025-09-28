@@ -2,4 +2,4 @@ __pycache__
 env
 lib
 lib.egg-info
-mediaservice.egg-info
+mediaservice.egg-info/

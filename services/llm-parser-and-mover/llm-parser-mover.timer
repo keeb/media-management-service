@@ -1,0 +1,10 @@
+[Unit]
+Description=Run LLM Parser and Mover every hour
+Requires=llm-parser-mover.service
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
