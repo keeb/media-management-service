@@ -3,15 +3,12 @@
 CLI tool to download anime episodes from SubsPlease.
 
 Usage:
-    subsplease-dl <show name> [episode-range] [--auto]
-
-Examples:
-    subsplease-dl "dandadan"
-    subsplease-dl "one piece" 1080-1090
-    subsplease-dl "dandadan" --auto
+    mms download subsplease <show name> [--range 1080-1090] [--auto]
 """
 
 import sys
+
+import click
 
 from mediaservice.sources.subsplease import (
     search,
@@ -30,51 +27,54 @@ DEFAULT_DIRS = [
 ]
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: subsplease-dl <show name> [episodes] [--auto]")
-        print("  --auto: Skip download prompt and download automatically")
-        sys.exit(1)
+@click.command("subsplease")
+@click.argument("show")
+@click.option("--range", "episode_range", default=None, help="Episode range (e.g., 1080-1090)")
+@click.option("--auto", is_flag=True, help="Skip download prompt and download automatically")
+def subsplease_cmd(show: str, episode_range: str | None, auto: bool):
+    """Download anime episodes from SubsPlease."""
+    click.echo(f"Searching for {show}")
+    results = filter_results(search(show), "1080")
 
-    term = sys.argv[1]
-    auto_download = "--auto" in sys.argv
-
-    print("Searching for " + term)
-    results = filter_results(search(term), "1080")
-
-    # Check for episode range argument
-    if len(sys.argv) >= 3:
-        for arg in sys.argv[2:]:
-            if arg != "--auto" and "-" in arg:
-                start, stop = arg.split("-")
-                results = filter_range(results, int(start), int(stop))
-                break
+    # Apply episode range filter if provided
+    if episode_range and "-" in episode_range:
+        start, stop = episode_range.split("-")
+        results = filter_range(results, int(start), int(stop))
 
     if len(results) == 0:
-        print("No results found")
+        click.echo("No results found")
         sys.exit(0)
 
     # Filter out episodes that already exist
     for dir_path in DEFAULT_DIRS:
-        results = filter_exists(results, dir_path, key_identifier=term)
+        results = filter_exists(results, dir_path, key_identifier=show)
 
         if len(results) == 0:
-            print("All episodes already exist locally")
+            click.echo("All episodes already exist locally")
             sys.exit(0)
 
-    print(f"Found {len(results)} episodes to download")
+    click.echo(f"Found {len(results)} episodes to download")
 
-    if auto_download:
-        print("Auto-downloading...")
+    if auto:
+        click.echo("Auto-downloading...")
         download_magnets(results)
     else:
-        user_input = input("Download? (y/n): ")
-        if user_input == "y":
+        if click.confirm("Download?"):
             download_magnets(results)
         else:
-            print("Not downloading")
-            print(results)
+            click.echo("Not downloading")
+            click.echo(str(results))
             sys.exit(0)
+
+
+def main():
+    """Legacy entry point."""
+    # For backwards compatibility with the old CLI that used positional args
+    if len(sys.argv) < 2:
+        click.echo("Usage: subsplease-dl <show name> [episodes] [--auto]")
+        click.echo("  --auto: Skip download prompt and download automatically")
+        sys.exit(1)
+    subsplease_cmd()
 
 
 if __name__ == "__main__":

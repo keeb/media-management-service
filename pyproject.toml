@@ -9,6 +9,7 @@ dependencies = [
     "flask>=3.0.0",
     "flask-cors>=4.0.0",
     "pyyaml>=6.0.0",
+    "click>=8.0.0",
 ]
 
 [project.optional-dependencies]
@@ -16,8 +17,13 @@ dev = [
     "pytest>=8.0.0",
     "ruff>=0.1.0",
 ]
+build = [
+    "pyinstaller>=6.0.0",
+]
 
 [project.scripts]
+mms = "mediaservice.cli.main:cli"
+# Legacy entry points (deprecated, use mms subcommands instead)
 media-cleaner = "mediaservice.cli.cleaner:main"
 media-worker = "mediaservice.cli.media_worker:main"
 subsplease-dl = "mediaservice.cli.subsplease_dl:main"

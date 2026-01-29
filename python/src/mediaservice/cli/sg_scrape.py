@@ -7,6 +7,7 @@ This Flask API receives scrape payloads and enqueues them for the worker to proc
 
 import os
 
+import click
 from flask import Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
@@ -79,7 +80,7 @@ def create_app():
         save(payload)
 
     @app.route("/", methods=["POST"])
-    def main():
+    def main_route():
         rjson = request.json
         if not rjson or rjson.get("model") is None:
             return "", 201
@@ -94,15 +95,25 @@ def create_app():
     return app
 
 
-def main():
-    """Main entry point for SG scrape API."""
-    port = int(os.environ.get("PORT", 4000))
-    debug = os.environ.get("DEBUG", "false").lower() == "true"
+@click.command("scrape")
+@click.option("--port", default=4000, help="Port to run the server on")
+@click.option("--debug", is_flag=True, help="Run in debug mode")
+def sg_scrape_cmd(port: int, debug: bool):
+    """Run the SG scrape API server."""
+    if port == 4000:
+        port = int(os.environ.get("PORT", 4000))
+    if not debug:
+        debug = os.environ.get("DEBUG", "false").lower() == "true"
 
-    print(f"Starting SG Scrape API on port {port}")
+    click.echo(f"Starting SG Scrape API on port {port}")
 
     app = create_app()
     app.run(debug=debug, host="0.0.0.0", port=port)
+
+
+def main():
+    """Legacy entry point for SG scrape API."""
+    sg_scrape_cmd()
 
 
 if __name__ == "__main__":

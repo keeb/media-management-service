@@ -7,6 +7,7 @@ using LLM prompts to determine file metadata and destination paths.
 """
 
 import os
+import sys
 import shutil
 import json
 from datetime import datetime, UTC
@@ -19,6 +20,38 @@ from pymongo.database import Database
 from pymongo.collection import Collection
 from mediaservice.util.ollama import run_prompt
 from mediaservice.util.file import ismovie
+
+
+def get_prompts_dir(prompts_dir: str = "prompts") -> str:
+    """Get the prompts directory, handling PyInstaller bundled data.
+
+    When running as a PyInstaller bundle, data files are extracted to
+    a temporary directory accessible via sys._MEIPASS.
+
+    Args:
+        prompts_dir: Default prompts directory path
+
+    Returns:
+        Resolved path to the prompts directory
+    """
+    # Check if running as PyInstaller bundle
+    if hasattr(sys, "_MEIPASS"):
+        bundled_path = os.path.join(sys._MEIPASS, "prompts")
+        if os.path.isdir(bundled_path):
+            return bundled_path
+
+    # Check if the provided path exists
+    if os.path.isdir(prompts_dir):
+        return prompts_dir
+
+    # Try relative to the package location
+    package_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    relative_path = os.path.join(package_dir, "..", "..", "..", "prompts")
+    if os.path.isdir(relative_path):
+        return os.path.abspath(relative_path)
+
+    # Fall back to the provided path
+    return prompts_dir
 
 # Configuration constants
 STAGING_DIRECTORY = Path("/home/keeb/media/video/staging/")
@@ -110,7 +143,8 @@ def filename_to_json(filename: str, job_id: str = "unknown", prompts_dir: str = 
     """Convert filename to JSON metadata using LLM prompt."""
     try:
         logger.debug(f"Processing filename: {filename}")
-        prompt_path = os.path.join(prompts_dir, "filename-to-json.prompt")
+        resolved_prompts_dir = get_prompts_dir(prompts_dir)
+        prompt_path = os.path.join(resolved_prompts_dir, "filename-to-json.prompt")
         file_data = run_prompt(prompt_path, filename, model="qwen3:14b")
 
         save_debug_log(job_id, filename, "filename_to_json", filename, file_data)
@@ -128,7 +162,8 @@ def find_save_path(
     """Determine save path from JSON metadata using LLM prompt."""
     try:
         logger.debug("Determining save path from metadata")
-        prompt_path = os.path.join(prompts_dir, "json-to-save-path.prompt")
+        resolved_prompts_dir = get_prompts_dir(prompts_dir)
+        prompt_path = os.path.join(resolved_prompts_dir, "json-to-save-path.prompt")
         save_path = run_prompt(prompt_path, file_json, model="qwen3:14b")
 
         save_debug_log(job_id, filename, "json_to_save_path", file_json, save_path)
