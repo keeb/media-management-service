@@ -23,10 +23,12 @@ CRITICAL:
 ## Path Generation Logic:
 
 **For Anime (media_type: "anime"):**
-- Base path: /home/keeb/media/video/anime/completed/
+- Base path: /home/keeb/media/video/anime/completed/tondemo-skill-de-isekai-hourou-meshi/s2
 - Append normalized title as directory name
 - Example: "Clevatess" → /home/keeb/media/video/anime/completed/clevatess
 - "Yofukashi no Uta S2" is a special case. it goes to /home/keeb/media/video/anime/completed/call-of-the-night/s2/
+- "Tondemo Skill de Isekai Hourou Meshi S2" is another special case. it goes to /home/keeb/media/video/anime/completed/tondemo-skill-de-isekai-hourou-meshi/s2
+- "Jujutsu Kaisen - Shimetsu Kaiyuu" goes to /home/keeb/media/video/anime/completed/jujutsu-kaisen/s3/
 
 
 **For Movies (media_type: "movie"):**

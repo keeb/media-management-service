@@ -1,0 +1,11 @@
+#!/bin/bash
+# Simple wrapper for media-worker CLI
+export MONGO_HOST=10.0.0.12
+export MONGO_DATABASE=media
+
+# Use venv if it exists, otherwise assume globally installed
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+fi
+
+exec media-worker "$@"

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Simple wrapper for erai-raws-dl CLI
+
+# Use venv if it exists, otherwise assume globally installed
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+fi
+
+exec erai-raws-dl "$@"

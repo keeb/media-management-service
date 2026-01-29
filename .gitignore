@@ -1,5 +1,35 @@
-__pycache__
-env
-lib
-lib.egg-info
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Old package artifacts
+lib.egg-info/
 mediaservice.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Swamp runtime artifacts
+inputs/
+resources/
+workflows/**/workflow-run-*.yaml

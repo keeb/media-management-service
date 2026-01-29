@@ -1,5 +1,5 @@
 import os
-from lib.parse import parse_movie, is_year
+from mediaservice.organize.parse import parse_movie, is_year
 
 def get_anime_info(filename: str) -> tuple[bool, str]:
     """Determine if a file is anime and extract show name for organization.

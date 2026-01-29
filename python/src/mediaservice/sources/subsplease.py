@@ -1,11 +1,23 @@
-import sys
-import requests
-import json
-import lib.file
+"""
+SubsPlease anime episode search and download utilities.
+"""
+
 import re
+import json
+import requests
+
+from mediaservice.util.file import crawl_for_files, get_file_name
 
 
-def search(query):
+def search(query: str) -> dict:
+    """Search SubsPlease API for anime episodes.
+
+    Args:
+        query: Show name to search for
+
+    Returns:
+        Dictionary of episode results
+    """
     if " " in query:
         query = query.replace(" ", "+")
 
@@ -13,7 +25,7 @@ def search(query):
     print(f"\nSearching: {query}")
     response = requests.get(url)
     result = response.json()
-    
+
     # Filter out batch entries if result is a dict
     if isinstance(result, dict):
         filtered_result = {}
@@ -22,34 +34,53 @@ def search(query):
             if not re.search(r'\d{2}-\d{2}', key):
                 filtered_result[key] = value
         result = filtered_result
-    
+
     return result
 
-def filter_results(json, term):
+
+def filter_results(results: dict, resolution: str = "1080") -> dict:
+    """Filter search results to only include specified resolution.
+
+    Args:
+        results: Raw search results from SubsPlease API
+        resolution: Resolution to filter for (e.g. "1080", "720")
+
+    Returns:
+        Dictionary mapping episode number to magnet link
+    """
     filtered = {}
-    if isinstance(json, list):
+    if isinstance(results, list):
         print("No results found")
         return filtered
 
-    for key in json.keys():
+    for key in results.keys():
         # For movies, use the full title (excluding " - Movie") as the identifier
         if key.endswith(" - Movie"):
-            # Extract everything between show name and " - Movie"
-            # e.g., "Spy x Family - Code White - Movie" -> "Code White"
             parts = key.rsplit(" - Movie", 1)[0].split(" - ", 1)
             number = parts[1] if len(parts) > 1 else parts[0]
         else:
             number = key.split(" ")[-1]
 
-        download_info = json.get(key).get("downloads")
+        download_info = results.get(key).get("downloads")
         for info in download_info:
-            if info.get("res") == term:
+            if info.get("res") == resolution:
                 filtered[number] = info.get("magnet")
 
     return filtered
 
-def filter_range(filtered, start, stop):
-    wat = {}
+
+def filter_range(filtered: dict, start: int, stop: int) -> dict:
+    """Filter results to only include episodes within a range.
+
+    Args:
+        filtered: Dictionary of episode -> magnet
+        start: Start episode number
+        stop: Stop episode number
+
+    Returns:
+        Filtered dictionary
+    """
+    result = {}
     started = False
     for key in filtered.keys():
         if int(key) == stop:
@@ -59,21 +90,33 @@ def filter_range(filtered, start, stop):
             break
 
         if started:
-            wat[key] = filtered[key]
-    
-    return wat
+            result[key] = filtered[key]
+
+    return result
+
 
 def normalize(s: str) -> str:
+    """Normalize string for comparison."""
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
+
 def filter_exists(filtered: dict, download_dir: str, key_identifier: str = None) -> dict:
-    """Remove episodes from the filtered dictionary that appear to already exist."""
+    """Remove episodes from results that already exist in directory.
+
+    Args:
+        filtered: Dictionary of episode -> magnet
+        download_dir: Directory to check for existing files
+        key_identifier: Show name to match against filenames
+
+    Returns:
+        Dictionary with existing episodes removed
+    """
     print(f"\nChecking directory: {download_dir}")
     print(f"Show: {key_identifier}")
-    
-    existing_files = lib.file.crawl_for_files(download_dir)
+
+    existing_files = crawl_for_files(download_dir)
     print(f"Found {len(existing_files)} existing files")
-    
+
     remaining = {}
 
     for episode, magnet in filtered.items():
@@ -81,7 +124,7 @@ def filter_exists(filtered: dict, download_dir: str, key_identifier: str = None)
         exists = False
 
         for file in existing_files:
-            filename = lib.file.get_file_name(file)
+            filename = get_file_name(file)
             episode_pattern = f" {episode_str}[ .[(]"
             if re.search(episode_pattern, filename):
                 if key_identifier:
@@ -106,65 +149,18 @@ def filter_exists(filtered: dict, download_dir: str, key_identifier: str = None)
         print("\nNo new episodes to download")
     return remaining
 
-def download(filtered_results_list):
-    for key in filtered_results_list.keys():
-        magnet = filtered_results_list[key]
+
+def download_magnets(episodes: dict, endpoint: str = "http://hancock:9200/magnet"):
+    """Send magnet links to download endpoint.
+
+    Args:
+        episodes: Dictionary of episode -> magnet
+        endpoint: URL to POST magnet links to
+    """
+    for key, magnet in episodes.items():
         print("Downloading " + magnet)
 
-        url = "http://hancock:9200/magnet"
         header = {'Content-type': 'application/json'}
         data = {"magnet": magnet}
-        response = requests.post(url, data=json.dumps(data), headers=header)
+        response = requests.post(endpoint, data=json.dumps(data), headers=header)
         print(response.text)
-
-
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: python3 show-1080p-magnet.py <show name> [episodes] [--auto]")
-        print("  --auto: Skip download prompt and download automatically")
-        exit(1)
-
-    term = sys.argv[1]
-    auto_download = "--auto" in sys.argv
-    
-    print("Searching for " + term)
-    results = filter_results(search(term), "1080")
-
-    if len(sys.argv) >= 3:
-        for arg in sys.argv[2:]:
-            if arg != "--auto" and "-" in arg:
-                start, stop = arg.split("-")
-                results = filter_range(results, int(start), int(stop))
-                break
-
-    if len(results) == 0:
-        print("No results found")
-        exit(0)
-    
-    anime_dir = "/home/keeb/media/video/anime"
-    staging_dir = "/home/keeb/media/video/staging"
-    movies_dir = "/home/keeb/media/video/movies"
-    dirs_to_check = [anime_dir, staging_dir, movies_dir]
-    for dir in dirs_to_check:
-        results = filter_exists(results, dir, key_identifier=term)
-        
-        if len(results) == 0:
-            print("All episodes already exist locally")
-            exit(0)
-
-    print(f"Found {len(results)} episodes to download")
-    
-    if auto_download:
-        print("Auto-downloading...")
-        download(results)
-    else:
-        user_input = input("Download? (y/n): ")
-        if user_input == "y":
-            download(results)
-        else:
-            print("Not downloading")
-            print(results)
-            exit(0)
-
-
-

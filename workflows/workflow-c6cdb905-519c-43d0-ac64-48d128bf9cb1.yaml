@@ -1,0 +1,20 @@
+id: c6cdb905-519c-43d0-ac64-48d128bf9cb1
+name: run-llm
+description: Run the media-worker CLI with MongoDB configuration
+jobs:
+  - name: main
+    description: Execute media-worker with configured environment
+    steps:
+      - name: run-media-worker
+        description: Run media-worker with MongoDB environment variables
+        task:
+          type: shell
+          command: bash
+          args:
+            - -c
+            - "source .venv/bin/activate && export MONGO_HOST=10.0.0.12 && export MONGO_DATABASE=media && media-worker"
+        dependsOn: []
+        weight: 0
+    dependsOn: []
+    weight: 0
+version: 1
