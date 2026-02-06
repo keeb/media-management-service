@@ -1,0 +1,7 @@
+id: ed2c5cbd-2b8a-4c11-ad5c-1c48bef087b2
+name: yofukashi-no-uta-s2
+version: 1
+tags: {}
+attributes:
+  run: ./dist/mms download subsplease yofukashi-no-uta-s2 --auto
+  workingDir: /home/keeb/git/media-management-service

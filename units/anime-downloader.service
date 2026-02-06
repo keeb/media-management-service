@@ -1,0 +1,13 @@
+[Unit]
+Description=Run anime-downloader swamp workflow
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/keeb/git/media-management-service
+ExecStart=/home/keeb/git/swamp/swamp workflow run anime-downloader --json
+User=keeb
+
+[Install]
+WantedBy=multi-user.target

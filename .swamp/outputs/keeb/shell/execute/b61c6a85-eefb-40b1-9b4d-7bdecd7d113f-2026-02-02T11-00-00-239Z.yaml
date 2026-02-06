@@ -1,0 +1,19 @@
+id: 2cc07021-bab3-4f4f-a2df-daf9aba1714a
+modelInputId: b61c6a85-eefb-40b1-9b4d-7bdecd7d113f
+methodName: execute
+status: succeeded
+startedAt: '2026-02-02T11:00:00.239Z'
+retryCount: 0
+provenance:
+  inputHash: 29addbcb11c8cae78cffc0e37c9a0b1e3a16a295cb3b1c0eae9237aa9fc2a5f8
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 481f4712-a733-4797-bde8-8c47e312a99c
+  stepName: futari-solo-camp
+completedAt: '2026-02-02T11:00:03.313Z'
+durationMs: 3074
+artifacts:
+  dataId: b61c6a85-eefb-40b1-9b4d-7bdecd7d113f
+  logIds:
+    - b61c6a85-eefb-40b1-9b4d-7bdecd7d113f

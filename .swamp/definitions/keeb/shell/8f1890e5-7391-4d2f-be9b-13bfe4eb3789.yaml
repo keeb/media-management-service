@@ -1,0 +1,7 @@
+id: 8f1890e5-7391-4d2f-be9b-13bfe4eb3789
+name: dandadan
+version: 1
+tags: {}
+attributes:
+  run: ./dist/mms download subsplease dandadan --auto
+  workingDir: /home/keeb/git/media-management-service

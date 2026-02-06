@@ -1,0 +1,31 @@
+id: e144c4d7-cb50-49b5-a105-ef85e5204af2
+definitionId: 6160e45e-a5c5-429a-816a-e77e038711e2
+methodName: execute
+status: succeeded
+startedAt: '2026-02-06T19:43:28.235Z'
+retryCount: 0
+provenance:
+  definitionHash: 05db1d529966b98b795c770e3d035fb102563badb9db775925992da4b5a2784d
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: fb418258-bdc1-4f8c-aa2c-4fa99185568f
+  stepName: summer-pockets
+artifacts:
+  dataArtifacts:
+    - dataId: 1d60995a-ca67-4568-a09f-4fdb8f7b8009
+      name: summer-pockets-result
+      version: 4
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: summer-pockets
+    - dataId: 85069ab7-75d3-4624-a311-df64de007327
+      name: summer-pockets-output
+      version: 4
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: summer-pockets
+completedAt: '2026-02-06T19:43:31.367Z'
+durationMs: 3132

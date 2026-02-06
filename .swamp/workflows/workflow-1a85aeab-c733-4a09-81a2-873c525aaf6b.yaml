@@ -1,0 +1,19 @@
+id: 1a85aeab-c733-4a09-81a2-873c525aaf6b
+name: media-cleaner
+description: Clean completed torrents from Transmission
+jobs:
+  - name: main
+    description: Remove completed torrents
+    steps:
+      - name: run-cleaner
+        description: Run media-cleaner to remove completed torrents
+        task:
+          type: shell
+          command: ./dist/mms
+          args:
+            - clean
+        dependsOn: []
+        weight: 0
+    dependsOn: []
+    weight: 0
+version: 1

@@ -1,0 +1,31 @@
+id: a2258f95-eace-44c9-b05e-081b5449e603
+definitionId: 9e06e50f-109d-4d7f-9f53-bc7aefe3cfbb
+methodName: execute
+status: succeeded
+startedAt: '2026-02-06T19:39:11.914Z'
+retryCount: 0
+provenance:
+  definitionHash: 71afbeb44d89c49612d7d12a3a011c09c56e4a70b0a56d352d1e7ecf33559d8d
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 0a6961a3-b010-477b-b252-cc484a2f88fc
+  stepName: clevatess
+artifacts:
+  dataArtifacts:
+    - dataId: 07d00962-daa7-4840-b74b-eb7e01faadd1
+      name: clevatess-result
+      version: 2
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: clevatess
+    - dataId: 9046e1ba-065e-40ad-a7c0-8e1f40516e1a
+      name: clevatess-output
+      version: 2
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: clevatess
+completedAt: '2026-02-06T19:39:15.691Z'
+durationMs: 3777

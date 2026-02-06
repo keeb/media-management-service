@@ -1,0 +1,16 @@
+id: 33b5b210-d6a6-4f09-9606-0c4edc974089
+name: erai-raws-result
+version: 3
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: 2f7cdae2165e119ab08b6cee0fdf84204ebb4a89c148ec4c25b064b1b7139378
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:44:00.037Z'
+size: 52600
+checksum: c9aaf741873a28752c492b9a67a02ce94a95cc7e4cba072d72403e2db48a94e8

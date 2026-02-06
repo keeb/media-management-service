@@ -1,0 +1,18 @@
+id: d318c3a3-9013-4370-b07b-5201ba674565
+name: dandadan-result
+version: 6
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: dandadan
+ownerDefinition:
+  definitionHash: abdba5b38f8f802a4f069417cc9aa505f23b51e766dcf01f23624d42e55f6c56
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T20:23:00.892Z'
+size: 2058
+checksum: 1496deb8b320cdc8117ad01017f7f69890f836e361b38dc280a1b5d0e5840fc7

@@ -10,17 +10,8 @@ import os
 import click
 from flask import Flask, request
 from flask_cors import CORS
-from pymongo import MongoClient
 
-
-# Initialize MongoDB connection
-def get_mongo_client():
-    """Get MongoDB client from environment or defaults."""
-    host = os.environ.get("MONGO_HOST", "localhost")
-    port = os.environ.get("MONGO_PORT", "27017")
-    username = os.environ.get("MONGO_USERNAME", "treehouse")
-    password = os.environ.get("MONGO_PASSWORD", "mongo")
-    return MongoClient(f"mongodb://{username}:{password}@{host}:{port}")
+from mediaservice.db.mongo import get_sg_db
 
 
 def construct_key(model_name: str, album_name: str) -> dict:
@@ -33,8 +24,7 @@ def create_app():
     app = Flask(__name__)
     CORS(app)
 
-    client = get_mongo_client()
-    db = client.sg
+    db = get_sg_db()
 
     def get_pending_queue():
         return db.pending

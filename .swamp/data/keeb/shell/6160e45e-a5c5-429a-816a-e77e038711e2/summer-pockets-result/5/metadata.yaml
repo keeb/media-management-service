@@ -1,0 +1,16 @@
+id: 98e6b796-511b-48b7-86e7-8398c5efef28
+name: summer-pockets-result
+version: 5
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: 05db1d529966b98b795c770e3d035fb102563badb9db775925992da4b5a2784d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T20:23:00.880Z'
+size: 2362
+checksum: 11827d7d04971c66117f4f68ca3295b0a1b7062b2522179d59993c1c3ad6963a

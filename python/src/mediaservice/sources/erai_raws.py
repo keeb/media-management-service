@@ -4,6 +4,7 @@ Erai-raws anime episode search and download utilities.
 Fetches RSS from Nyaa filtered to Erai-raws uploads.
 """
 
+import logging
 import re
 import json
 import requests
@@ -14,8 +15,11 @@ from typing import Optional
 
 from mediaservice.util.file import crawl_for_files, get_file_name
 from mediaservice.util.ollama import run_prompt
+from mediaservice.config import PROMPTS_DIR
 
-FILENAME_PROMPT = "prompts/filename-to-json.prompt"
+logger = logging.getLogger(__name__)
+
+FILENAME_PROMPT = f"{PROMPTS_DIR}/filename-to-json.prompt"
 
 
 NYAA_RSS_BASE = "https://nyaa.si/?page=rss&u=Erai-raws"
@@ -73,7 +77,7 @@ def fetch_rss(query: str) -> str:
     """
     encoded_query = quote_plus(query)
     url = f"{NYAA_RSS_BASE}&q={encoded_query}"
-    print(f"\nFetching RSS: {url}")
+    logger.info(f"Fetching RSS: {url}")
     response = requests.get(url, timeout=30)
     response.raise_for_status()
     return response.text
@@ -239,7 +243,7 @@ def filter_to_configured_seasons(
         # No subtitle-based seasons, don't filter
         return episodes
 
-    print(f"Active seasons to download: {sorted(active_seasons)}")
+    logger.info(f"Active seasons to download: {sorted(active_seasons)}")
 
     remaining = []
     for ep in episodes:
@@ -247,7 +251,7 @@ def filter_to_configured_seasons(
         if parsed and parsed.get("season") in active_seasons:
             remaining.append(ep)
         elif parsed:
-            print(f"Excluding season {parsed.get('season')}: {ep.title[:60]}...")
+            logger.info(f"Excluding season {parsed.get('season')}: {ep.title[:60]}...")
 
     return remaining
 
@@ -284,14 +288,15 @@ def parse_with_llm(title: str) -> Optional[dict]:
         Dictionary with title, season, episode or None if parsing fails
     """
     try:
-        result = run_prompt(FILENAME_PROMPT, title, model="qwen3:14b")
+        from mediaservice.config import DEFAULT_LLM_MODEL
+        result = run_prompt(FILENAME_PROMPT, title, model=DEFAULT_LLM_MODEL)
         # Handle potential markdown code block wrapper
         if result.startswith("```"):
             result = re.sub(r'^```(?:json)?\n?', '', result)
             result = re.sub(r'\n?```$', '', result)
         return json.loads(result)
     except (json.JSONDecodeError, Exception) as e:
-        print(f"LLM parse failed for '{title}': {e}")
+        logger.warning(f"LLM parse failed for '{title}': {e}")
         return None
 
 
@@ -391,7 +396,7 @@ def filter_exists(
         # Parse with LLM to get accurate season/episode
         parsed = parse_with_llm(ep.title)
         if not parsed:
-            print(f"Could not parse: {ep.title}")
+            logger.warning(f"Could not parse: {ep.title}")
             remaining.append(ep)
             continue
 
@@ -400,7 +405,7 @@ def filter_exists(
         episode = parsed.get("episode")
 
         if not title or episode is None:
-            print(f"Missing title/episode in parse result: {parsed}")
+            logger.warning(f"Missing title/episode in parse result: {parsed}")
             remaining.append(ep)
             continue
 
@@ -420,7 +425,7 @@ def filter_exists(
                     for filename in os.listdir(season_path):
                         if re.search(rf'[\s\-_]0?{episode}[\s\.\[\(v]', filename):
                             exists = True
-                            print(f"Episode {episode_padded} exists: {season_path}/{filename}")
+                            logger.info(f"Episode {episode_padded} exists: {season_path}/{filename}")
                             break
 
             # Check 2: Flat show directory {base}/{show}/ (no season subdir)
@@ -432,7 +437,7 @@ def filter_exists(
                             continue
                         if re.search(rf'[\s\-_]0?{episode}[\s\.\[\(v]', filename):
                             exists = True
-                            print(f"Episode {episode_padded} exists: {show_path}/{filename}")
+                            logger.info(f"Episode {episode_padded} exists: {show_path}/{filename}")
                             break
 
             # Check 3: Flat staging directory - match show name + episode in filename
@@ -444,7 +449,7 @@ def filter_exists(
                         if normalized_title in normalize(filename):
                             if re.search(rf'[\s\-_]0?{episode}[\s\.\[\(v]', filename):
                                 exists = True
-                                print(f"Episode {episode_padded} exists: {base_dir}/{filename}")
+                                logger.info(f"Episode {episode_padded} exists: {base_dir}/{filename}")
                                 break
                 except OSError:
                     pass
@@ -453,34 +458,37 @@ def filter_exists(
                 break
 
         if not exists:
-            print(f"Episode {episode_padded} (s{season}) not found locally")
+            logger.info(f"Episode {episode_padded} (s{season}) not found locally")
             remaining.append(ep)
 
     if remaining:
-        print(f"\nEpisodes to download: {[ep.episode for ep in remaining]}")
+        logger.info(f"Episodes to download: {[ep.episode for ep in remaining]}")
     else:
-        print("\nNo new episodes to download")
+        logger.info("No new episodes to download")
 
     return remaining
 
 
 def download_magnets(
     episodes: list[Episode],
-    endpoint: str = "http://hancock:9200/magnet"
+    endpoint: str = None,
 ) -> None:
     """Send magnet links to download endpoint.
 
     Args:
         episodes: List of Episode objects
-        endpoint: URL to POST magnet links to
+        endpoint: URL to POST magnet links to (defaults to MAGNET_ENDPOINT from config)
     """
-    for ep in episodes:
-        print(f"Downloading episode {ep.episode}: {ep.title}")
+    from mediaservice.download.magnets import download_magnets as _download
+    from mediaservice.config import MAGNET_ENDPOINT
 
-        header = {'Content-type': 'application/json'}
-        data = {"magnet": ep.magnet}
-        response = requests.post(endpoint, data=json.dumps(data), headers=header, timeout=30)
-        print(response.text)
+    if endpoint is None:
+        endpoint = MAGNET_ENDPOINT
+
+    for ep in episodes:
+        logger.info(f"Downloading episode {ep.episode}: {ep.title}")
+
+    _download([ep.magnet for ep in episodes], endpoint=endpoint)
 
 
 def search_show(
@@ -510,29 +518,29 @@ def search_show(
 
     xml = fetch_rss(query)
     episodes = parse_feed(xml)
-    print(f"Found {len(episodes)} total items in feed")
+    logger.info(f"Found {len(episodes)} total items in feed")
 
     # Filter batch releases
     episodes = filter_batch(episodes)
-    print(f"After excluding batches: {len(episodes)}")
+    logger.info(f"After excluding batches: {len(episodes)}")
 
     # Filter by resolution
     episodes = filter_by_resolution(episodes, resolution)
-    print(f"After filtering to {resolution}: {len(episodes)}")
+    logger.info(f"After filtering to {resolution}: {len(episodes)}")
 
     # Filter by language
     if language:
         episodes = filter_by_language(episodes, language)
-        print(f"After filtering to {language}: {len(episodes)}")
+        logger.info(f"After filtering to {language}: {len(episodes)}")
 
     # Deduplicate preferring HEVC
     episodes = deduplicate_prefer_hevc(episodes)
-    print(f"After deduplication (prefer HEVC): {len(episodes)}")
+    logger.info(f"After deduplication (prefer HEVC): {len(episodes)}")
 
     # Filter to configured seasons (when subtitles are configured)
     if show_config:
         episodes = filter_to_configured_seasons(episodes, show_config)
-        print(f"After filtering to configured seasons: {len(episodes)}")
+        logger.info(f"After filtering to configured seasons: {len(episodes)}")
 
     # Filter existing
     if filter_existing and dirs:

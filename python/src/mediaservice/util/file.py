@@ -19,8 +19,8 @@ def crawl_for_files(folder) -> list:
             try:
                 for subitem in crawl_for_files(combined):
                     data.append(subitem)
-            except:
-                print("think we found a dead end.. %s" % combined)
+            except OSError:
+                logger.debug(f"could not crawl: {combined}")
         elif os.path.isfile(combined):
             data.append(combined)
     return data

@@ -1,0 +1,19 @@
+id: 5c88e44c-9410-4cae-9df6-01da0d44a99c
+modelInputId: cab7a5e3-08df-4efc-bd62-ba97f5fa72c7
+methodName: execute
+status: succeeded
+startedAt: '2026-01-31T19:21:19.562Z'
+retryCount: 0
+provenance:
+  inputHash: 9e959f90fb8c19b920a5a61533b7439adfcf91fa036a519b9b314cd1de5985c3
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 8e4e59e5-8dc2-4ec5-9422-456cbdb06259
+  stepName: jidou-hanbaiki-s2
+completedAt: '2026-01-31T19:21:22.543Z'
+durationMs: 2981
+artifacts:
+  dataId: cab7a5e3-08df-4efc-bd62-ba97f5fa72c7
+  logIds:
+    - cab7a5e3-08df-4efc-bd62-ba97f5fa72c7

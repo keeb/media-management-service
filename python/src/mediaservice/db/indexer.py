@@ -2,28 +2,19 @@
 Media indexing utilities for MongoDB.
 """
 
-import os
 import hashlib
 from datetime import datetime
 from typing import Optional, Dict, List, Any
 
-from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 
-
-def get_mongo_client():
-    """Get MongoDB client from environment or defaults."""
-    host = os.environ.get("MONGO_HOST", "localhost")
-    port = os.environ.get("MONGO_PORT", "27017")
-    username = os.environ.get("MONGO_USERNAME", "treehouse")
-    password = os.environ.get("MONGO_PASSWORD", "mongo")
-    return MongoClient(f"mongodb://{username}:{password}@{host}:{port}")
+from mediaservice.config import MONGO_INDEXER_DATABASE
+from mediaservice.db.mongo import connect
 
 
 def get_media_collection():
     """Get the media collection."""
-    client = get_mongo_client()
-    db = client.media_management
+    db = connect(database=MONGO_INDEXER_DATABASE)
     return db.media
 
 

@@ -1,0 +1,18 @@
+id: 301f4add-82c2-45bc-9725-1dbba60e87a7
+name: erai-raws-result
+version: 2
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: download
+ownerDefinition:
+  definitionHash: 2f7cdae2165e119ab08b6cee0fdf84204ebb4a89c148ec4c25b064b1b7139378
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:57.415Z'
+size: 60544
+checksum: cdd9d0520ca63c4a9a5edd8c21b738c9bec4096f3289d2bf3e8f27830fd70903

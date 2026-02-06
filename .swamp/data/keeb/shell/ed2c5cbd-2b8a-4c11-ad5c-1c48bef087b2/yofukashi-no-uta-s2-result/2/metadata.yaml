@@ -1,0 +1,18 @@
+id: 46d030c8-ca9c-4c22-a204-57bc30846c81
+name: yofukashi-no-uta-s2-result
+version: 2
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: yofukashi-no-uta-s2
+ownerDefinition:
+  definitionHash: 88b2c55c54adb2ba5ae306a66ca26327101968e0537e868aabd47508b65f685d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:15.695Z'
+size: 1380
+checksum: db4202c14e833ea50e95ed3b961f6206b111ded2f131c8c7f63c1a8d6cc6abb8

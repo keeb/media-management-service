@@ -1,0 +1,39 @@
+id: 588b13e2-65cc-4488-85f9-3c29673f2ec0
+workflowId: c6cdb905-519c-43d0-ac64-48d128bf9cb1
+workflowName: run-llm
+status: failed
+startedAt: '2026-01-29T22:47:58.310Z'
+completedAt: '2026-01-29T22:48:05.087Z'
+jobs:
+  - jobName: main
+    status: failed
+    startedAt: '2026-01-29T22:47:58.311Z'
+    completedAt: '2026-01-29T22:48:05.081Z'
+    steps:
+      - stepName: run-media-worker
+        status: failed
+        startedAt: '2026-01-29T22:47:58.311Z'
+        completedAt: '2026-01-29T22:48:05.081Z'
+        error: >
+          Shell command failed: 2026-01-29 14:47:58,548 - INFO - Starting media
+          job worker
+
+          2026-01-29 14:48:03,554 - ERROR - Failed to connect to MongoDB:
+          localhost:27017: [Errno 111] Connection refused (configured timeouts:
+          socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout:
+          5.0s, Topology Description: <TopologyDescription id:
+          697be39e466a79d8395c662a, topology_type: Unknown, servers:
+          [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt:
+          None, error=AutoReconnect('localhost:27017: [Errno 111] Connection
+          refused (configured timeouts: socketTimeoutMS: 20000.0ms,
+          connectTimeoutMS: 20000.0ms)')>]>
+
+          2026-01-29 14:48:03,554 - CRITICAL - Database connection failed: Could
+          not connect to MongoDB: localhost:27017: [Errno 111] Connection
+          refused (configured timeouts: socketTimeoutMS: 20000.0ms,
+          connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description:
+          <TopologyDescription id: 697be39e466a79d8395c662a, topology_type:
+          Unknown, servers: [<ServerDescription ('localhost', 27017)
+          server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017:
+          [Errno 111] Connection refused (configured timeouts: socketTimeoutMS:
+          20000.0ms, connectTimeoutMS: 20000.0ms)')>]>

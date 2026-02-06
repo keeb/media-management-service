@@ -1,0 +1,18 @@
+id: 85069ab7-75d3-4624-a311-df64de007327
+name: summer-pockets-output
+version: 4
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: summer-pockets
+ownerDefinition:
+  definitionHash: 05db1d529966b98b795c770e3d035fb102563badb9db775925992da4b5a2784d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.367Z'
+size: 2175
+checksum: 618aedb606034548a22212025ef17baf09d9ce311a32db1ceb4680d89f69be0f

@@ -1,0 +1,18 @@
+id: 7e30a65b-1880-4659-a1cd-9389a6eeeaee
+name: mattaku-saikin-no-tantei-result
+version: 4
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: mattaku-saikin-no-tantei
+ownerDefinition:
+  definitionHash: a78198d69cb2bb17b67e75946ebcdfa0f07e4bca37e55aa81fef329a31dd21f8
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.301Z'
+size: 1618
+checksum: 87f565a8e4f30912b909ac3e259e88fcdbcb366d2b54e01b7ef906bbfc7ebceb

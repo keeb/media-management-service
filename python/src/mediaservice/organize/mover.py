@@ -15,11 +15,12 @@ from typing import Dict, Optional, Any
 from pathlib import Path
 import logging
 
-from pymongo import MongoClient
 from pymongo.database import Database
 from pymongo.collection import Collection
 from mediaservice.util.ollama import run_prompt
 from mediaservice.util.file import ismovie
+from mediaservice.db.mongo import connect
+from mediaservice.config import STAGING_DIRECTORY, DEBUG_LOG_DIRECTORY, DEFAULT_LLM_MODEL
 
 
 def get_prompts_dir(prompts_dir: str = "prompts") -> str:
@@ -53,14 +54,6 @@ def get_prompts_dir(prompts_dir: str = "prompts") -> str:
     # Fall back to the provided path
     return prompts_dir
 
-# Configuration constants
-STAGING_DIRECTORY = Path("/home/keeb/media/video/staging/")
-DEBUG_LOG_DIRECTORY = Path("/home/keeb/media/debug/llm-responses/")
-DEFAULT_MONGO_HOST = "localhost"
-DEFAULT_MONGO_PORT = "27017"
-DEFAULT_MONGO_USERNAME = "treehouse"
-DEFAULT_MONGO_PASSWORD = "mongo"
-DEFAULT_MONGO_DATABASE = "media"
 DEFAULT_MAX_JOBS_PER_RUN = 0  # 0 means unlimited (process all available jobs)
 
 # Configure logging
@@ -95,28 +88,6 @@ def save_debug_log(
         logger.warning(f"Failed to save debug log: {e}")
 
 
-def connect_to_mongo() -> Database:
-    """Connect to MongoDB using environment variables or defaults."""
-    try:
-        host = os.getenv("MONGO_HOST", DEFAULT_MONGO_HOST)
-        port = os.getenv("MONGO_PORT", DEFAULT_MONGO_PORT)
-        username = os.getenv("MONGO_USERNAME", DEFAULT_MONGO_USERNAME)
-        password = os.getenv("MONGO_PASSWORD", DEFAULT_MONGO_PASSWORD)
-        database = os.getenv("MONGO_DATABASE", DEFAULT_MONGO_DATABASE)
-
-        connection_string = f"mongodb://{username}:{password}@{host}:{port}"
-        client = MongoClient(connection_string, serverSelectionTimeoutMS=5000)
-
-        client.server_info()
-
-        db = client[database]
-        logger.info(f"Successfully connected to MongoDB at {host}:{port}")
-        return db
-    except Exception as e:
-        logger.error(f"Failed to connect to MongoDB: {e}")
-        raise ConnectionError(f"Could not connect to MongoDB: {e}") from e
-
-
 def pop_job_from_queue(db: Database) -> Optional[Dict[str, Any]]:
     """Pop a pending job from the media.jobs collection and update status to in_progress."""
     try:
@@ -145,7 +116,7 @@ def filename_to_json(filename: str, job_id: str = "unknown", prompts_dir: str = 
         logger.debug(f"Processing filename: {filename}")
         resolved_prompts_dir = get_prompts_dir(prompts_dir)
         prompt_path = os.path.join(resolved_prompts_dir, "filename-to-json.prompt")
-        file_data = run_prompt(prompt_path, filename, model="qwen3:14b")
+        file_data = run_prompt(prompt_path, filename, model=DEFAULT_LLM_MODEL)
 
         save_debug_log(job_id, filename, "filename_to_json", filename, file_data)
 
@@ -164,7 +135,7 @@ def find_save_path(
         logger.debug("Determining save path from metadata")
         resolved_prompts_dir = get_prompts_dir(prompts_dir)
         prompt_path = os.path.join(resolved_prompts_dir, "json-to-save-path.prompt")
-        save_path = run_prompt(prompt_path, file_json, model="qwen3:14b")
+        save_path = run_prompt(prompt_path, file_json, model=DEFAULT_LLM_MODEL)
 
         save_debug_log(job_id, filename, "json_to_save_path", file_json, save_path)
 
@@ -301,7 +272,7 @@ def run_worker(max_jobs: int = 0, prompts_dir: str = "prompts") -> tuple[int, in
     Returns:
         Tuple of (jobs_processed, failures)
     """
-    db = connect_to_mongo()
+    db = connect()
 
     jobs_processed = 0
     total_failures = 0

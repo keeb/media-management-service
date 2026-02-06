@@ -1,0 +1,18 @@
+id: 7bc88dad-90a3-4048-9086-70c8e005a33b
+name: futari-solo-camp-result
+version: 2
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: futari-solo-camp
+ownerDefinition:
+  definitionHash: 3763bde5ab43426904105698f43c4de1671686dd916fc4fec6a104c1506622bb
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:16.014Z'
+size: 2268
+checksum: 42ea9a1560e5f2a7a848591a10a9a3533a591c7fa325cbccbe416945a6f91e06

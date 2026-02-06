@@ -1,0 +1,72 @@
+id: 8c67b998-7ffb-4a09-9ed1-f3baa1ddfc91
+workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+workflowName: anime-downloader
+status: failed
+startedAt: '2026-02-06T19:18:57.408Z'
+completedAt: '2026-02-06T19:18:57.526Z'
+jobs:
+  - jobName: erai-raws
+    status: failed
+    startedAt: '2026-02-06T19:18:57.497Z'
+    completedAt: '2026-02-06T19:18:57.513Z'
+    steps:
+      - stepName: download
+        status: failed
+        startedAt: '2026-02-06T19:18:57.510Z'
+        completedAt: '2026-02-06T19:18:57.512Z'
+        error: 'Model not found: erai-raws'
+  - jobName: subsplease
+    status: failed
+    startedAt: '2026-02-06T19:18:57.503Z'
+    completedAt: '2026-02-06T19:18:57.525Z'
+    steps:
+      - stepName: dandadan
+        status: failed
+        startedAt: '2026-02-06T19:18:57.517Z'
+        completedAt: '2026-02-06T19:18:57.522Z'
+        error: 'Model not found: dandadan'
+      - stepName: clevatess
+        status: failed
+        startedAt: '2026-02-06T19:18:57.516Z'
+        completedAt: '2026-02-06T19:18:57.522Z'
+        error: 'Model not found: clevatess'
+      - stepName: food-court-de-mata-ashita
+        status: failed
+        startedAt: '2026-02-06T19:18:57.517Z'
+        completedAt: '2026-02-06T19:18:57.523Z'
+        error: 'Model not found: food-court-de-mata-ashita'
+      - stepName: futari-solo-camp
+        status: failed
+        startedAt: '2026-02-06T19:18:57.517Z'
+        completedAt: '2026-02-06T19:18:57.523Z'
+        error: 'Model not found: futari-solo-camp'
+      - stepName: gachiakuta
+        status: failed
+        startedAt: '2026-02-06T19:18:57.518Z'
+        completedAt: '2026-02-06T19:18:57.523Z'
+        error: 'Model not found: gachiakuta'
+      - stepName: jidou-hanbaiki-s2
+        status: failed
+        startedAt: '2026-02-06T19:18:57.518Z'
+        completedAt: '2026-02-06T19:18:57.523Z'
+        error: 'Model not found: jidou-hanbaiki-s2'
+      - stepName: mattaku-saikin-no-tantei
+        status: failed
+        startedAt: '2026-02-06T19:18:57.518Z'
+        completedAt: '2026-02-06T19:18:57.523Z'
+        error: 'Model not found: mattaku-saikin-no-tantei'
+      - stepName: mizuzokusei-no-mahoutsukai
+        status: failed
+        startedAt: '2026-02-06T19:18:57.519Z'
+        completedAt: '2026-02-06T19:18:57.524Z'
+        error: 'Model not found: mizuzokusei-no-mahoutsukai'
+      - stepName: summer-pockets
+        status: failed
+        startedAt: '2026-02-06T19:18:57.519Z'
+        completedAt: '2026-02-06T19:18:57.524Z'
+        error: 'Model not found: summer-pockets'
+      - stepName: yofukashi-no-uta-s2
+        status: failed
+        startedAt: '2026-02-06T19:18:57.519Z'
+        completedAt: '2026-02-06T19:18:57.524Z'
+        error: 'Model not found: yofukashi-no-uta-s2'

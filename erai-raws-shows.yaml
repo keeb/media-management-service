@@ -1,13 +1,4 @@
 shows:
-  - name: "jujutsu kaisen"
-    seasons:
-      - number: 1
-        episodes: [1, 24]
-      - number: 2
-        episodes: [25, 47]
-      - number: 3
-        episodes: [1, 24]
-        subtitle: "Shimetsu Kaiyuu"
   - name: "Isekai no Sata wa Shachiku Shidai"
   - name: "Yuusha Party ni Kawaii"
   - name: "Osananajimi to wa"

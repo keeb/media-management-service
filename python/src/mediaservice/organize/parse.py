@@ -1,8 +1,6 @@
 import os
 import re
 
-nums = [x for x in range(0, 100)] # global for now ;/
-
 # Common helper functions
 def is_resolution(part: str) -> bool:
     """Check if string contains resolution marker."""
@@ -18,7 +16,7 @@ def is_year(part: str) -> bool:
         clean_part = part.strip("[]()").lower()
         year = int(''.join(c for c in clean_part if c.isdigit())[:4])
         return 1900 <= year <= 2099
-    except:
+    except (ValueError, IndexError):
         return False
 
 def is_encoding(part: str) -> bool:
@@ -192,92 +190,5 @@ def parse_movie(filename: str) -> dict:
     
     movie_info["name"] = " ".join(name_parts)
     return movie_info
-
-def parse_season_episode(part):
-    season = part[1:3]
-    episode = part[4:6]
-    return (season, episode)
-
-
-def parse_show_name(show_name):
-    # handle the case where release team is before show name
-
-    if show_name.startswith("["):
-        return " ".join(show_name.split("]")[1:]).lstrip().replace("-","").rstrip()
-
-    return show_name # just return it if not
-
-
-def parse(show_name):
-    """attempt to figure out if we parse using anime conventions or other scene conventions"""
-    show = parse_non_anime(show_name)
-    if show.get("season") is None:
-        show = parse_anime(show_name)
-
-    return show
-
-def parse_non_anime(show_name):
-
-    """
-        Assumptions we're making about the format of show names
-
-        Everything up until SXXEXX is the show name
-        SXXEXX is the season and episode
-        Everything after SXXEXX until Resolution is the episode name
-        Resulution is always a single word: 1080p, 720p
-        Resolution is followed by Source - HDTV, WEB-DL
-        Source is followed by Encoding as a prefix, release team as suffix
-    """
-
-    index = 0
-    full_season = False
-    encoding = None
-    team = None
-    resolution = None
-    checksum = None
-    season = None
-    episode = None
-
-    parts = show_name.split(" ")
-
-
-    for part in parts:
-
-        if part.startswith('[') and part.endswith(']'):
-            if not team: # we are going to assume that the first time we find this its always the team and never the checksum
-                team = part[1:-1]
-            else:
-                checksum = part[1:-1]
-
-
-        if is_season_episode_string(part):
-            show_name = parse_show_name(" ".join(parts[:index]))
-            season, episode = parse_season_episode(part)
-            if episode is None or episode == '':
-                full_season = True
-
-        if is_resolution(part):
-            resolution = part
-        
-        if is_encoding(part):
-            try:
-                encoding, team = part.split("-")
-            except:
-                pass
-
-        index += 1
-
-    show_info = {"name": show_name,
-            "season": season,
-            "episode": episode,
-            "episode_name": "", # not implemented, todo later probably maybe
-            "encoding": encoding,
-            "release_team": team,
-            "resolution": resolution,
-            "full_season": full_season,
-            "checksum": checksum
-            }
-    return show_info
-
 
 

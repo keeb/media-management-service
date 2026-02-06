@@ -1,0 +1,1097 @@
+id: 1dccee3f-4d43-4cbf-9464-a1bec3520472
+workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+workflowName: anime-downloader
+status: succeeded
+startedAt: '2026-01-30T01:03:08.272Z'
+completedAt: '2026-01-30T01:03:33.083Z'
+jobs:
+  - jobName: erai-raws
+    status: succeeded
+    startedAt: '2026-01-30T01:03:08.273Z'
+    completedAt: '2026-01-30T01:03:33.080Z'
+    steps:
+      - stepName: download
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.274Z'
+        completedAt: '2026-01-30T01:03:33.080Z'
+        output:
+          type: model_method
+          model: erai-raws
+          method: execute
+          resourceId: 34f613e4-e757-4937-af98-0d52ec03ed96
+          resourcePath: resources/keeb/shell/34f613e4-e757-4937-af98-0d52ec03ed96.yaml
+          resourceAttributes:
+            stdout: >
+              Loading config from: erai-raws-shows.yaml
+
+              Found 4 shows to process
+
+
+              ============================================================
+
+              Processing: Isekai no Sata wa Shachiku Shidai
+
+              Resolution: 1080p, Language: EN
+
+              ============================================================
+
+
+              Fetching RSS:
+              https://nyaa.si/?page=rss&u=Erai-raws&q=Isekai+no+Sata+wa+Shachiku+Shidai
+
+              Found 16 total items in feed
+
+              After excluding batches: 16
+
+              After filtering to 1080p: 8
+
+              After filtering to EN: 8
+
+              After deduplication (prefer HEVC): 4
+
+              After filtering to configured seasons: 4
+
+              Episode 04 exists:
+              /home/keeb/media/video/anime/completed/isekai-no-sata-wa-shachiku-shidai/[Erai-raws]
+              Isekai no Sata wa Shachiku Shidai - 04 [1080p CR WEBRip HEVC
+              AAC][MultiSub][07618C4C].mkv
+
+              Episode 03 exists:
+              /home/keeb/media/video/anime/completed/isekai-no-sata-wa-shachiku-shidai/[Erai-raws]
+              Isekai no Sata wa Shachiku Shidai - 03 [1080p CR WEBRip HEVC
+              AAC][MultiSub][1232CDED].mkv
+
+              Episode 02 exists:
+              /home/keeb/media/video/anime/completed/isekai-no-sata-wa-shachiku-shidai/[Erai-raws]
+              Isekai no Sata wa Shachiku Shidai - 02 [1080p CR WEBRip HEVC
+              AAC][MultiSub][4588A78B].mkv
+
+              Episode 01 exists:
+              /home/keeb/media/video/anime/completed/isekai-no-sata-wa-shachiku-shidai/[Erai-raws]
+              Isekai no Sata wa Shachiku Shidai - 01 [1080p CR WEBRip HEVC
+              AAC][MultiSub][466B888F].mkv
+
+
+              No new episodes to download
+
+              No new episodes to download
+
+
+              ============================================================
+
+              Processing: Yuusha Party ni Kawaii
+
+              Resolution: 1080p, Language: EN
+
+              ============================================================
+
+
+              Fetching RSS:
+              https://nyaa.si/?page=rss&u=Erai-raws&q=Yuusha+Party+ni+Kawaii
+
+              Found 16 total items in feed
+
+              After excluding batches: 16
+
+              After filtering to 1080p: 8
+
+              After filtering to EN: 8
+
+              After deduplication (prefer HEVC): 4
+
+              After filtering to configured seasons: 4
+
+              Episode 04 exists:
+              /home/keeb/media/video/anime/completed/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita/[Erai-raws]
+              Yuusha Party ni Kawaii Ko ga Ita node Kokuhaku shitemita - 04
+              [1080p CR WEBRip HEVC AAC][MultiSub][452040AC].mkv
+
+              Episode 03 exists:
+              /home/keeb/media/video/anime/completed/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita/[Erai-raws]
+              Yuusha Party ni Kawaii Ko ga Ita node Kokuhaku shitemita - 03
+              [1080p CR WEBRip HEVC AAC][MultiSub][F270D1D3].mkv
+
+              Episode 02 exists:
+              /home/keeb/media/video/anime/completed/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita/[SubsPlease]
+              Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita. - 02
+              (1080p) [71886F23].mkv
+
+              Episode 01 exists:
+              /home/keeb/media/video/anime/completed/yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita/[SubsPlease]
+              Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita. - 01
+              (1080p) [CC3FE38D].mkv
+
+
+              No new episodes to download
+
+              No new episodes to download
+
+
+              ============================================================
+
+              Processing: Osananajimi to wa
+
+              Resolution: 1080p, Language: EN
+
+              ============================================================
+
+
+              Fetching RSS:
+              https://nyaa.si/?page=rss&u=Erai-raws&q=Osananajimi+to+wa
+
+              Found 16 total items in feed
+
+              After excluding batches: 16
+
+              After filtering to 1080p: 8
+
+              After filtering to EN: 8
+
+              After deduplication (prefer HEVC): 4
+
+              After filtering to configured seasons: 4
+
+              Episode 04 exists:
+              /home/keeb/media/video/anime/completed/osananajimi-to-wa-lovecom-ni-naranai/[Erai-raws]
+              Osananajimi to wa LoveCom ni Naranai - 04 [1080p CR WEBRip HEVC
+              AAC][MultiSub][300C7C9D].mkv
+
+              Episode 03 exists:
+              /home/keeb/media/video/anime/completed/osananajimi-to-wa-lovecom-ni-naranai/[Erai-raws]
+              Osananajimi to wa LoveCom ni Naranai - 03 [1080p CR WEBRip HEVC
+              AAC][MultiSub][2EFA96A2].mkv
+
+              Episode 02 exists:
+              /home/keeb/media/video/anime/completed/osananajimi-to-wa-lovecom-ni-naranai/[Erai-raws]
+              Osananajimi to wa LoveCom ni Naranai - 02 [1080p CR WEBRip HEVC
+              AAC][MultiSub][F87D851C].mkv
+
+              Episode 01 exists:
+              /home/keeb/media/video/anime/completed/osananajimi-to-wa-lovecom-ni-naranai/[Erai-raws]
+              Osananajimi to wa LoveCom ni Naranai - 01 [1080p CR WEBRip HEVC
+              AAC][MultiSub][411E5151].mkv
+
+
+              No new episodes to download
+
+              No new episodes to download
+
+
+              ============================================================
+
+              Processing: Hime-sama Goumon
+
+              Resolution: 1080p, Language: EN
+
+              Season config: 1 seasons defined
+
+              ============================================================
+
+
+              Fetching RSS:
+              https://nyaa.si/?page=rss&u=Erai-raws&q=Hime-sama+Goumon
+
+              Found 60 total items in feed
+
+              After excluding batches: 60
+
+              After filtering to 1080p: 30
+
+              After filtering to EN: 30
+
+              After deduplication (prefer HEVC): 15
+
+              Active seasons to download: [2]
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 12 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 11 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 10 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 09 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 08 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 07 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 06 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 05 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 04 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 03 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 02 [1080p][HEVC...
+
+              Excluding season None: [Erai-raws] Hime-sama Goumon no Jikan Desu
+              - 01 [1080p][HEVC...
+
+              After filtering to configured seasons: 3
+
+              Episode 03 exists:
+              /home/keeb/media/video/anime/completed/hime-sama-goumon-no-jikan-desu/s2/[Erai-raws]
+              Hime-sama Goumon no Jikan desu 2nd Season - 03 [1080p CR WEBRip
+              HEVC AAC][MultiSub][4F3526CE].mkv
+
+              Episode 02 exists:
+              /home/keeb/media/video/anime/completed/hime-sama-goumon-no-jikan-desu/s2/[Erai-raws]
+              Hime-sama Goumon no Jikan desu 2nd Season - 02 [1080p CR WEBRip
+              HEVC AAC][MultiSub][74CE1FFF].mkv
+
+              Episode 01 exists:
+              /home/keeb/media/video/anime/completed/hime-sama-goumon-no-jikan-desu/s2/[Erai-raws]
+              Hime-sama Goumon no Jikan desu 2nd Season - 01 [1080p CR WEBRip
+              HEVC AAC][MultiSub][1C5E938F].mkv
+
+
+              No new episodes to download
+
+              No new episodes to download
+            stderr: "\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?2026h\e[?25l\e[1G\e[K\e[?25h\e[?2026l\e[2K\e[1G\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h\e[?25l\e[?25h"
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:33.079Z'
+            command: ./dist/mms download erai --config erai-raws-shows.yaml --auto
+            durationMs: 24804
+  - jobName: subsplease
+    status: succeeded
+    startedAt: '2026-01-30T01:03:08.273Z'
+    completedAt: '2026-01-30T01:03:11.597Z'
+    steps:
+      - stepName: dandadan
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.278Z'
+        completedAt: '2026-01-30T01:03:11.425Z'
+        output:
+          type: model_method
+          model: dandadan
+          method: execute
+          resourceId: 8f1890e5-7391-4d2f-be9b-13bfe4eb3789
+          resourcePath: resources/keeb/shell/8f1890e5-7391-4d2f-be9b-13bfe4eb3789.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for dandadan
+
+
+              Searching: dandadan
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: dandadan
+
+              Found 7586 existing files
+
+              Episode 24 exists: [SubsPlease] Dandadan - 24 (1080p)
+              [AD3DEA4E].mkv
+
+              Episode 23 exists: [SubsPlease] Dandadan - 23 (1080p)
+              [C4B0E4C5].mkv
+
+              Episode 22 exists: [SubsPlease] Dandadan - 22 (1080p)
+              [8242DEEF].mkv
+
+              Episode 21 exists: [SubsPlease] Dandadan - 21 (1080p)
+              [5A757FA8].mkv
+
+              Episode 20 exists: [SubsPlease] Dandadan - 20 (1080p)
+              [F364E727].mkv
+
+              Episode 19 exists: [SubsPlease] Dandadan - 19 (1080p)
+              [BDAB9A17].mkv
+
+              Episode 18 exists: [SubsPlease] Dandadan - 18 (1080p)
+              [9226CA61].mkv
+
+              Episode 17 exists: [SubsPlease] Dandadan - 17 (1080p)
+              [DCBA48BA].mkv
+
+              Episode 16 exists: [SubsPlease] Dandadan - 16 (1080p)
+              [5681367F].mkv
+
+              Episode 15 exists: [SubsPlease] Dandadan - 15 (1080p)
+              [635498AC].mkv
+
+              Episode 14 exists: [SubsPlease] Dandadan - 14 (1080p)
+              [2340AECE].mkv
+
+              Episode 13 exists: [SubsPlease] Dandadan - 13 (1080p)
+              [A3CDCC67].mkv
+
+              Episode 12 exists: [SubsPlease] Dandadan - 12 (1080p)
+              [8D889E3B].mkv
+
+              Episode 11 exists: [SubsPlease] Dandadan - 11 (1080p)
+              [8748535F].mkv
+
+              Episode 10 exists: [SubsPlease] Dandadan - 10 (1080p)
+              [DE4B4411].mkv
+
+              Episode 09 exists: [SubsPlease] Dandadan - 09 (1080p)
+              [FF0AE279].mkv
+
+              Episode 08 exists: [SubsPlease] Dandadan - 08 (1080p)
+              [3FEB2C5D].mkv
+
+              Episode 07 exists: [ASW] Dandadan - 07 [1080p HEVC][696A4585].mkv
+
+              Episode 06 exists: [ASW] Dandadan - 06 [1080p HEVC][5E3EEB4A].mkv
+
+              Episode 05 exists: [SubsPlease] Dandadan - 05 (1080p)
+              [28020A6E].mkv
+
+              Episode 04 exists: [ASW] Dandadan - 04 [1080p HEVC][38D2DB44].mkv
+
+              Episode 03 exists: [Erai-raws] Dan Da Dan - 03
+              [1080p][HEVC][Multiple Subtitle][B405BC8C].mkv
+
+              Episode 02 exists: [SubsPlease] Dandadan - 02 (1080p)
+              [5F956413].mkv
+
+              Episode 01 exists: [SubsPlease] Dandadan - 01 (1080p)
+              [2AB10B14].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.425Z'
+            command: ./dist/mms download subsplease dandadan --auto
+            durationMs: 3140
+      - stepName: clevatess
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.277Z'
+        completedAt: '2026-01-30T01:03:11.375Z'
+        output:
+          type: model_method
+          model: clevatess
+          method: execute
+          resourceId: 9e06e50f-109d-4d7f-9f53-bc7aefe3cfbb
+          resourcePath: resources/keeb/shell/9e06e50f-109d-4d7f-9f53-bc7aefe3cfbb.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for clevatess
+
+
+              Searching: clevatess
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: clevatess
+
+              Found 7586 existing files
+
+              Episode 12 exists: [SubsPlease] Clevatess - 12 (1080p)
+              [5E4C1FB8].mkv
+
+              Episode 11v3 exists: [SubsPlease] Clevatess - 11v3 (1080p)
+              [D2EECB67].mkv
+
+              Episode 10 exists: [SubsPlease] Clevatess - 10 (1080p)
+              [A1E14A2A].mkv
+
+              Episode 09 exists: [SubsPlease] Clevatess - 09 (1080p)
+              [9E6970B5].mkv
+
+              Episode 08 exists: [SubsPlease] Clevatess - 08 (1080p)
+              [B0DADC3E].mkv
+
+              Episode 07 exists: [SubsPlease] Clevatess - 07 (1080p)
+              [4590833F].mkv
+
+              Episode 06 exists: [SubsPlease] Clevatess - 06 (1080p)
+              [ABC5A9AE].mkv
+
+              Episode 05 exists: [SubsPlease] Clevatess - 05 (1080p)
+              [B5E8C274].mkv
+
+              Episode 04 exists: [SubsPlease] Clevatess - 04 (1080p)
+              [59B9B1D0].mkv
+
+              Episode 03 exists: [SubsPlease] Clevatess - 03 (1080p)
+              [E4E163AC].mkv
+
+              Episode 02 exists: [SubsPlease] Clevatess - 02 (1080p)
+              [BAB6761F].mkv
+
+              Episode 01 exists: [SubsPlease] Clevatess - 01 (1080p)
+              [BBC6F877].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.375Z'
+            command: ./dist/mms download subsplease clevatess --auto
+            durationMs: 3094
+      - stepName: food-court-de-mata-ashita
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.278Z'
+        completedAt: '2026-01-30T01:03:11.362Z'
+        output:
+          type: model_method
+          model: food-court-de-mata-ashita
+          method: execute
+          resourceId: b96c513f-660c-4572-a95e-67b464ff7db8
+          resourcePath: resources/keeb/shell/b96c513f-660c-4572-a95e-67b464ff7db8.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for food-court-de-mata-ashita
+
+
+              Searching: food-court-de-mata-ashita
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: food-court-de-mata-ashita
+
+              Found 7586 existing files
+
+              Episode 06 exists: [SubsPlease] Food Court de, Mata Ashita. - 06
+              (1080p) [FB9710BC].mkv
+
+              Episode 05 exists: [SubsPlease] Food Court de, Mata Ashita. - 05
+              (1080p) [0C7BB610].mkv
+
+              Episode 04 exists: [SubsPlease] Food Court de, Mata Ashita. - 04
+              (1080p) [94FB6CE4].mkv
+
+              Episode 03 exists: [SubsPlease] Food Court de, Mata Ashita. - 03
+              (1080p) [FCF281DF].mkv
+
+              Episode 02 exists: [SubsPlease] Food Court de, Mata Ashita. - 02
+              (1080p) [9A79A99B].mkv
+
+              Episode 01 exists: [SubsPlease] Food Court de, Mata Ashita. - 01
+              (1080p) [2744CD3E].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.362Z'
+            command: ./dist/mms download subsplease food-court-de-mata-ashita --auto
+            durationMs: 3080
+      - stepName: futari-solo-camp
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.403Z'
+        output:
+          type: model_method
+          model: futari-solo-camp
+          method: execute
+          resourceId: b61c6a85-eefb-40b1-9b4d-7bdecd7d113f
+          resourcePath: resources/keeb/shell/b61c6a85-eefb-40b1-9b4d-7bdecd7d113f.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for futari-solo-camp
+
+
+              Searching: futari-solo-camp
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: futari-solo-camp
+
+              Found 7586 existing files
+
+              Episode 24 exists: [SubsPlease] Futari Solo Camp - 24 (1080p)
+              [2B00C2A5].mkv
+
+              Episode 23 exists: [SubsPlease] Futari Solo Camp - 23 (1080p)
+              [CC0D5BEA].mkv
+
+              Episode 22 exists: [SubsPlease] Futari Solo Camp - 22 (1080p)
+              [6D4C972A].mkv
+
+              Episode 21 exists: [SubsPlease] Futari Solo Camp - 21 (1080p)
+              [BE338135].mkv
+
+              Episode 20 exists: [SubsPlease] Futari Solo Camp - 20 (1080p)
+              [7865ECC6].mkv
+
+              Episode 19 exists: [SubsPlease] Futari Solo Camp - 19 (1080p)
+              [EFEA3231].mkv
+
+              Episode 18 exists: [SubsPlease] Futari Solo Camp - 18 (1080p)
+              [5BE1AA86].mkv
+
+              Episode 17 exists: [SubsPlease] Futari Solo Camp - 17 (1080p)
+              [74AB1B98].mkv
+
+              Episode 16 exists: [SubsPlease] Futari Solo Camp - 16 (1080p)
+              [7D22C33C].mkv
+
+              Episode 15 exists: [SubsPlease] Futari Solo Camp - 15 (1080p)
+              [A5AE15A9].mkv
+
+              Episode 14 exists: [SubsPlease] Futari Solo Camp - 14 (1080p)
+              [09E704ED].mkv
+
+              Episode 13 exists: [SubsPlease] Futari Solo Camp - 13 (1080p)
+              [F06E6091].mkv
+
+              Episode 12 exists: [SubsPlease] Futari Solo Camp - 12 (1080p)
+              [A9D14D10].mkv
+
+              Episode 11 exists: [SubsPlease] Futari Solo Camp - 11 (1080p)
+              [536E9AA3].mkv
+
+              Episode 10 exists: [SubsPlease] Futari Solo Camp - 10 (1080p)
+              [B0229457].mkv
+
+              Episode 09 exists: [SubsPlease] Futari Solo Camp - 09 (1080p)
+              [8D86F614].mkv
+
+              Episode 08 exists: [SubsPlease] Futari Solo Camp - 08 (1080p)
+              [09380911].mkv
+
+              Episode 07 exists: [SubsPlease] Futari Solo Camp - 07 (1080p)
+              [14D10177].mkv
+
+              Episode 06 exists: [SubsPlease] Futari Solo Camp - 06 (1080p)
+              [0AAC3DD0].mkv
+
+              Episode 05 exists: [SubsPlease] Futari Solo Camp - 05 (1080p)
+              [8A4E0D3D].mkv
+
+              Episode 04 exists: [SubsPlease] Futari Solo Camp - 04 (1080p)
+              [816ACF48].mkv
+
+              Episode 03 exists: [SubsPlease] Futari Solo Camp - 03 (1080p)
+              [EE7BED03].mkv
+
+              Episode 02 exists: [SubsPlease] Futari Solo Camp - 02 (1080p)
+              [70E5B062].mkv
+
+              Episode 01 exists: [SubsPlease] Futari Solo Camp - 01 (1080p)
+              [F70CF074].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.402Z'
+            command: ./dist/mms download subsplease futari-solo-camp --auto
+            durationMs: 3119
+      - stepName: gachiakuta
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.566Z'
+        output:
+          type: model_method
+          model: gachiakuta
+          method: execute
+          resourceId: cb0fd88f-f842-496a-9c63-f3e3959d6eba
+          resourcePath: resources/keeb/shell/cb0fd88f-f842-496a-9c63-f3e3959d6eba.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for gachiakuta
+
+
+              Searching: gachiakuta
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: gachiakuta
+
+              Found 7586 existing files
+
+              Episode 24 exists: [SubsPlease] Gachiakuta - 24 (1080p)
+              [8231E0B5].mkv
+
+              Episode 23 exists: [SubsPlease] Gachiakuta - 23 (1080p)
+              [E2B627F4].mkv
+
+              Episode 22 exists: [SubsPlease] Gachiakuta - 22 (1080p)
+              [FCABD071].mkv
+
+              Episode 21 exists: [SubsPlease] Gachiakuta - 21 (1080p)
+              [4EE84076].mkv
+
+              Episode 20v2 exists: [SubsPlease] Gachiakuta - 20v2 (1080p)
+              [7E3DFE23].mkv
+
+              Episode 19 exists: [SubsPlease] Gachiakuta - 19 (1080p)
+              [019A6A50].mkv
+
+              Episode 18 exists: [SubsPlease] Gachiakuta - 18 (1080p)
+              [11294C04].mkv
+
+              Episode 17 exists: [SubsPlease] Gachiakuta - 17 (1080p)
+              [AC6E3335].mkv
+
+              Episode 16 exists: [SubsPlease] Gachiakuta - 16 (1080p)
+              [03E4E7F3].mkv
+
+              Episode 15 exists: [SubsPlease] Gachiakuta - 15 (1080p)
+              [83AD2954].mkv
+
+              Episode 14 exists: [SubsPlease] Gachiakuta - 14 (1080p)
+              [559CBA6A].mkv
+
+              Episode 13 exists: [SubsPlease] Gachiakuta - 13 (1080p)
+              [F442614E].mkv
+
+              Episode 12 exists: [SubsPlease] Gachiakuta - 12 (1080p)
+              [F824F559].mkv
+
+              Episode 11 exists: [SubsPlease] Gachiakuta - 11 (1080p)
+              [E4D9692C].mkv
+
+              Episode 10 exists: [SubsPlease] Gachiakuta - 10 (1080p)
+              [E942EFD2].mkv
+
+              Episode 09 exists: [SubsPlease] Gachiakuta - 09 (1080p)
+              [2C010B02].mkv
+
+              Episode 08 exists: [SubsPlease] Gachiakuta - 08 (1080p)
+              [291F50DE].mkv
+
+              Episode 07 exists: [SubsPlease] Gachiakuta - 07 (1080p)
+              [BB849092].mkv
+
+              Episode 06 exists: [SubsPlease] Gachiakuta - 06 (1080p)
+              [F1556DF2].mkv
+
+              Episode 05 exists: [SubsPlease] Gachiakuta - 05 (1080p)
+              [54F0C550].mkv
+
+              Episode 04 exists: [SubsPlease] Gachiakuta - 04 (1080p)
+              [3D52F046].mkv
+
+              Episode 03 exists: [SubsPlease] Gachiakuta - 03 (1080p)
+              [BF76DD32].mkv
+
+              Episode 02 exists: [SubsPlease] Gachiakuta - 02 (1080p)
+              [B5E328E0].mkv
+
+              Episode 01 exists: [SubsPlease] Gachiakuta - 01 (1080p)
+              [61F61D80].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.566Z'
+            command: ./dist/mms download subsplease gachiakuta --auto
+            durationMs: 3282
+      - stepName: jidou-hanbaiki-s2
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.349Z'
+        output:
+          type: model_method
+          model: jidou-hanbaiki-s2
+          method: execute
+          resourceId: cab7a5e3-08df-4efc-bd62-ba97f5fa72c7
+          resourcePath: resources/keeb/shell/cab7a5e3-08df-4efc-bd62-ba97f5fa72c7.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for
+              jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2
+
+
+              Searching:
+              jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2
+
+              Found 7586 existing files
+
+              Episode 12 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 12 (1080p) [2E973B02].mkv
+
+              Episode 11 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 11 (1080p) [89E63522].mkv
+
+              Episode 10 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 10 (1080p) [EDCA13CF].mkv
+
+              Episode 09 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 09 (1080p) [E70D2C6B].mkv
+
+              Episode 08 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 08 (1080p) [7823F6FF].mkv
+
+              Episode 07 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 07 (1080p) [CA1B490A].mkv
+
+              Episode 06 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 06 (1080p) [5515C057].mkv
+
+              Episode 05 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 05 (1080p) [E788A07D].mkv
+
+              Episode 04 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 04 (1080p) [1D49371A].mkv
+
+              Episode 03 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 03 (1080p) [098B2ED8].mkv
+
+              Episode 02 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 02 (1080p) [09EE4313].mkv
+
+              Episode 01 exists: [SubsPlease] Jidou Hanbaiki ni Umarekawatta Ore
+              wa Meikyuu wo Samayou S2 - 01 (1080p) [62BD8741].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.348Z'
+            command: >-
+              ./dist/mms download subsplease
+              jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2 --auto
+            durationMs: 3064
+      - stepName: mattaku-saikin-no-tantei
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.355Z'
+        output:
+          type: model_method
+          model: mattaku-saikin-no-tantei
+          method: execute
+          resourceId: 14c2f100-8c59-4b8a-b62f-88f37ef6585a
+          resourcePath: resources/keeb/shell/14c2f100-8c59-4b8a-b62f-88f37ef6585a.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for mattaku-saikin-no-tantei-to-kitara
+
+
+              Searching: mattaku-saikin-no-tantei-to-kitara
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: mattaku-saikin-no-tantei-to-kitara
+
+              Found 7586 existing files
+
+              Episode 12 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 12 (1080p) [BAA8B67D].mkv
+
+              Episode 11 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 11 (1080p) [1C0C5280].mkv
+
+              Episode 10 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 10 (1080p) [9C7BCE12].mkv
+
+              Episode 09 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 09 (1080p) [35E7A545].mkv
+
+              Episode 08 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 08 (1080p) [C2EDAC4B].mkv
+
+              Episode 07 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 07 (1080p) [23F6E011].mkv
+
+              Episode 06 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 06 (1080p) [4C58A26C].mkv
+
+              Episode 05 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 05 (1080p) [0E0E6281].mkv
+
+              Episode 04 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 04 (1080p) [23499DAB].mkv
+
+              Episode 03 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 03 (1080p) [DF0DD959].mkv
+
+              Episode 02 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 02 (1080p) [909E1932].mkv
+
+              Episode 01 exists: [SubsPlease] Mattaku Saikin no Tantei to Kitara
+              - 01 (1080p) [4D01C8F6].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.354Z'
+            command: >-
+              ./dist/mms download subsplease mattaku-saikin-no-tantei-to-kitara
+              --auto
+            durationMs: 3072
+      - stepName: mizuzokusei-no-mahoutsukai
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.381Z'
+        output:
+          type: model_method
+          model: mizuzokusei-no-mahoutsukai
+          method: execute
+          resourceId: 1efc937f-1743-485d-ae38-f507665da319
+          resourcePath: resources/keeb/shell/1efc937f-1743-485d-ae38-f507665da319.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for mizuzokusei-no-mahoutsukai
+
+
+              Searching: mizuzokusei-no-mahoutsukai
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: mizuzokusei-no-mahoutsukai
+
+              Found 7586 existing files
+
+              Episode 12 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 12
+              (1080p) [FE53EE5B].mkv
+
+              Episode 11 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 11
+              (1080p) [DF9327B3].mkv
+
+              Episode 10 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 10
+              (1080p) [9E6D8502].mkv
+
+              Episode 09 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 09
+              (1080p) [3DBEBA88].mkv
+
+              Episode 08 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 08
+              (1080p) [8A94BD54].mkv
+
+              Episode 07 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 07
+              (1080p) [B064CB1A].mkv
+
+              Episode 06 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 06
+              (1080p) [863518ED].mkv
+
+              Episode 05 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 05
+              (1080p) [423F4B27].mkv
+
+              Episode 04 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 04
+              (1080p) [E8D60AD8].mkv
+
+              Episode 03 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 03
+              (1080p) [B09695BF].mkv
+
+              Episode 02 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 02
+              (1080p) [D983EECA].mkv
+
+              Episode 01 exists: [SubsPlease] Mizuzokusei no Mahoutsukai - 01
+              (1080p) [D522CE01].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.380Z'
+            command: ./dist/mms download subsplease mizuzokusei-no-mahoutsukai --auto
+            durationMs: 3094
+      - stepName: summer-pockets
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.279Z'
+        completedAt: '2026-01-30T01:03:11.597Z'
+        output:
+          type: model_method
+          model: summer-pockets
+          method: execute
+          resourceId: 6160e45e-a5c5-429a-816a-e77e038711e2
+          resourcePath: resources/keeb/shell/6160e45e-a5c5-429a-816a-e77e038711e2.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for summer-pockets
+
+
+              Searching: summer-pockets
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: summer-pockets
+
+              Found 7586 existing files
+
+              Episode 26 exists: [SubsPlease] Summer Pockets - 26 (1080p)
+              [D08E7036].mkv
+
+              Episode 25 exists: [SubsPlease] Summer Pockets - 25 (1080p)
+              [3144979D].mkv
+
+              Episode 24 exists: [SubsPlease] Summer Pockets - 24 (1080p)
+              [2728E50E].mkv
+
+              Episode 23 exists: [SubsPlease] Summer Pockets - 23 (1080p)
+              [E6A1F4A6].mkv
+
+              Episode 22 exists: [SubsPlease] Summer Pockets - 22 (1080p)
+              [A2FA2763].mkv
+
+              Episode 21 exists: [SubsPlease] Summer Pockets - 21 (1080p)
+              [AF4F6C10].mkv
+
+              Episode 20 exists: [SubsPlease] Summer Pockets - 20 (1080p)
+              [A7BE81E7].mkv
+
+              Episode 19 exists: [SubsPlease] Summer Pockets - 19 (1080p)
+              [2F73278D].mkv
+
+              Episode 18 exists: [SubsPlease] Summer Pockets - 18 (1080p)
+              [D20561C5].mkv
+
+              Episode 17 exists: [SubsPlease] Summer Pockets - 17 (1080p)
+              [27C6566F].mkv
+
+              Episode 16 exists: [SubsPlease] Summer Pockets - 16 (1080p)
+              [8EA5F5C2].mkv
+
+              Episode 15 exists: [SubsPlease] Summer Pockets - 15 (1080p)
+              [B9AFB26A].mkv
+
+              Episode 14 exists: [SubsPlease] Summer Pockets - 14 (1080p)
+              [5061D89B].mkv
+
+              Episode 13 exists: [SubsPlease] Summer Pockets - 13 (1080p)
+              [7E60F1CB].mkv
+
+              Episode 12 exists: [SubsPlease] Summer Pockets - 12 (1080p)
+              [9CE24286].mkv
+
+              Episode 11 exists: [SubsPlease] Summer Pockets - 11 (1080p)
+              [E069685B].mkv
+
+              Episode 10 exists: [SubsPlease] Summer Pockets - 10 (1080p)
+              [4F26A172].mkv
+
+              Episode 09 exists: [SubsPlease] Summer Pockets - 09 (1080p)
+              [825C95A3].mkv
+
+              Episode 08 exists: [SubsPlease] Summer Pockets - 08 (1080p)
+              [B13D34B4].mkv
+
+              Episode 07 exists: [SubsPlease] Summer Pockets - 07 (1080p)
+              [77CE30E9].mkv
+
+              Episode 06 exists: [SubsPlease] Summer Pockets - 06 (1080p)
+              [DFD185B2].mkv
+
+              Episode 05 exists: [SubsPlease] Summer Pockets - 05 (1080p)
+              [C9D9723D].mkv
+
+              Episode 04 exists: [SubsPlease] Summer Pockets - 04 (1080p)
+              [FB5440CF].mkv
+
+              Episode 03 exists: [SubsPlease] Summer Pockets - 03 (1080p)
+              [B91A155F].mkv
+
+              Episode 02 exists: [SubsPlease] Summer Pockets - 02 (1080p)
+              [523906DF].mkv
+
+              Episode 01 exists: [SubsPlease] Summer Pockets - 01 (1080p)
+              [841471A0].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.597Z'
+            command: ./dist/mms download subsplease summer-pockets --auto
+            durationMs: 3311
+      - stepName: yofukashi-no-uta-s2
+        status: succeeded
+        startedAt: '2026-01-30T01:03:08.280Z'
+        completedAt: '2026-01-30T01:03:11.351Z'
+        output:
+          type: model_method
+          model: yofukashi-no-uta-s2
+          method: execute
+          resourceId: ed2c5cbd-2b8a-4c11-ad5c-1c48bef087b2
+          resourcePath: resources/keeb/shell/ed2c5cbd-2b8a-4c11-ad5c-1c48bef087b2.yaml
+          resourceAttributes:
+            stdout: >
+              Searching for yofukashi-no-uta-s2
+
+
+              Searching: yofukashi-no-uta-s2
+
+
+              Checking directory: /home/keeb/media/video/anime
+
+              Show: yofukashi-no-uta-s2
+
+              Found 7586 existing files
+
+              Episode 12 exists: [SubsPlease] Yofukashi no Uta S2 - 12 (1080p)
+              [53FA69C1].mkv
+
+              Episode 11 exists: [SubsPlease] Yofukashi no Uta S2 - 11 (1080p)
+              [8743A180].mkv
+
+              Episode 10 exists: [SubsPlease] Yofukashi no Uta S2 - 10 (1080p)
+              [AD26225A].mkv
+
+              Episode 09 exists: [SubsPlease] Yofukashi no Uta S2 - 09 (1080p)
+              [9D32FF34].mkv
+
+              Episode 08 exists: [SubsPlease] Yofukashi no Uta S2 - 08 (1080p)
+              [AFF46EED].mkv
+
+              Episode 07 exists: [SubsPlease] Yofukashi no Uta S2 - 07 (1080p)
+              [57BFFA1B].mkv
+
+              Episode 06 exists: [SubsPlease] Yofukashi no Uta S2 - 06 (1080p)
+              [511F478D].mkv
+
+              Episode 05 exists: [SubsPlease] Yofukashi no Uta S2 - 05 (1080p)
+              [1E7C745F].mkv
+
+              Episode 04 exists: [SubsPlease] Yofukashi no Uta S2 - 04 (1080p)
+              [D20F361A].mkv
+
+              Episode 03 exists: [SubsPlease] Yofukashi no Uta S2 - 03 (1080p)
+              [05AD337E].mkv
+
+              Episode 02 exists: [SubsPlease] Yofukashi no Uta S2 - 02 (1080p)
+              [8AA6D6A1].mkv
+
+              Episode 01 exists: [SubsPlease] Yofukashi no Uta S2 - 01 (1080p)
+              [046F0EBC].mkv
+
+
+              No new episodes to download
+
+              All episodes already exist locally
+            stderr: ''
+            exitCode: 0
+            executedAt: '2026-01-30T01:03:11.350Z'
+            command: ./dist/mms download subsplease yofukashi-no-uta-s2 --auto
+            durationMs: 3066

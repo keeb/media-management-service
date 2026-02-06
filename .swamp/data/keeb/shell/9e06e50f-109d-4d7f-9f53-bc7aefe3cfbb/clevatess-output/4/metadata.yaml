@@ -1,0 +1,18 @@
+id: 72988d7b-0bad-4c44-ac6f-49eec584e041
+name: clevatess-output
+version: 4
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: clevatess
+ownerDefinition:
+  definitionHash: 71afbeb44d89c49612d7d12a3a011c09c56e4a70b0a56d352d1e7ecf33559d8d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.318Z'
+size: 1054
+checksum: 0f9b06202cce74760015f172e307fb7b5f1810688a1772d3c242af822494feef

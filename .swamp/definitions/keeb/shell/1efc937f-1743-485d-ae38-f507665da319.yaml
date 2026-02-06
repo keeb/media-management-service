@@ -1,0 +1,7 @@
+id: 1efc937f-1743-485d-ae38-f507665da319
+name: mizuzokusei-no-mahoutsukai
+version: 1
+tags: {}
+attributes:
+  run: ./dist/mms download subsplease mizuzokusei-no-mahoutsukai --auto
+  workingDir: /home/keeb/git/media-management-service

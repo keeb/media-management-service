@@ -1,11 +1,16 @@
 from dataclasses import dataclass, field
+import logging
 import requests
 import json
+
+from mediaservice.config import TRANSMISSION_URL
+
+logger = logging.getLogger(__name__)
 
 @dataclass
 class TransmissionRequest:
     headers: str = ""
-    url: str = "http://100.71.2.30:9091/transmission/rpc"
+    url: str = TRANSMISSION_URL
 
 
 
@@ -22,11 +27,9 @@ class TransmissionRequest:
             #add the x-transmission-session-id given to us by transmission to the headers
             self.headers["X-Transmission-Session-Id"] = tid
 
-            print("need new session id, got %s" % tid) # debug statements are cool
+            logger.debug(f"need new session id, got {tid}")
             # recursive, but only retry once
-            self.make_request(payload, retry=True)
-
-            return response
+            return self.make_request(payload, retry=True)
 
         return response
         

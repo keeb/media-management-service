@@ -1,0 +1,37 @@
+id: 565acb34-884a-44ae-989e-eb92f113724a
+workflowId: 1a85aeab-c733-4a09-81a2-873c525aaf6b
+workflowName: media-cleaner
+status: succeeded
+startedAt: '2026-01-29T21:27:26.277Z'
+completedAt: '2026-01-29T21:27:26.914Z'
+jobs:
+  - jobName: main
+    status: succeeded
+    startedAt: '2026-01-29T21:27:26.278Z'
+    completedAt: '2026-01-29T21:27:26.913Z'
+    steps:
+      - stepName: activate-venv
+        status: succeeded
+        startedAt: '2026-01-29T21:27:26.278Z'
+        completedAt: '2026-01-29T21:27:26.280Z'
+        output:
+          stdout: ''
+          exitCode: 0
+      - stepName: run-cleaner
+        status: succeeded
+        startedAt: '2026-01-29T21:27:26.280Z'
+        completedAt: '2026-01-29T21:27:26.913Z'
+        output:
+          stdout: >-
+            Checking current torrents...
+
+            need new session id, got
+            L6rxu2Nl1txXwp7m29s2TVA28zHvIVJItM3Ng34YV8me639b
+
+
+            Removing completed torrents...
+
+            Success!
+
+            Remaining torrents: 0
+          exitCode: 0

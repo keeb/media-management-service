@@ -1,0 +1,31 @@
+id: f220f00e-1646-4b8a-ba9b-4bd5bfcb413a
+definitionId: b61c6a85-eefb-40b1-9b4d-7bdecd7d113f
+methodName: execute
+status: succeeded
+startedAt: '2026-02-06T19:43:28.233Z'
+retryCount: 0
+provenance:
+  definitionHash: 3763bde5ab43426904105698f43c4de1671686dd916fc4fec6a104c1506622bb
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: fb418258-bdc1-4f8c-aa2c-4fa99185568f
+  stepName: futari-solo-camp
+artifacts:
+  dataArtifacts:
+    - dataId: 54450452-4fdb-4047-b29b-ceb7db0557de
+      name: futari-solo-camp-result
+      version: 4
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: futari-solo-camp
+    - dataId: e728b967-4fae-4598-98de-99cb600f60da
+      name: futari-solo-camp-output
+      version: 4
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: futari-solo-camp
+completedAt: '2026-02-06T19:43:31.351Z'
+durationMs: 3118

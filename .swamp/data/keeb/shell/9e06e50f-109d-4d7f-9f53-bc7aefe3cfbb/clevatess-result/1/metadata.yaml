@@ -1,0 +1,16 @@
+id: 2b34a579-4ee5-46dd-8a7e-fd9b86789ced
+name: clevatess-result
+version: 1
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: 71afbeb44d89c49612d7d12a3a011c09c56e4a70b0a56d352d1e7ecf33559d8d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:15.689Z'
+size: 1224
+checksum: 5a9bc3ffd6ff2d501444cdb00cdd8b2992c6fddb8fe430754aabce76cd85a1cc

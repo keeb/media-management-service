@@ -1,0 +1,19 @@
+id: f026918a-2b7a-4318-a743-9037e7ec7100
+modelInputId: 34f613e4-e757-4937-af98-0d52ec03ed96
+methodName: execute
+status: succeeded
+startedAt: '2026-02-01T11:00:19.385Z'
+retryCount: 0
+provenance:
+  inputHash: 90806b5aa5e34b665cb85f04c9e0a9c5dd0401dc7a17c4c2f1953639731c076d
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 222821dd-9c70-442a-97ff-e392cec1a6b6
+  stepName: download
+completedAt: '2026-02-01T11:00:45.183Z'
+durationMs: 25798
+artifacts:
+  dataId: 34f613e4-e757-4937-af98-0d52ec03ed96
+  logIds:
+    - 34f613e4-e757-4937-af98-0d52ec03ed96

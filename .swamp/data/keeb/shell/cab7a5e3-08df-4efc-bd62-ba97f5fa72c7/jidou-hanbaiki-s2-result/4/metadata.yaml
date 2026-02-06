@@ -1,0 +1,18 @@
+id: fb30280a-8276-4a81-b070-7b7ef86c4244
+name: jidou-hanbaiki-s2-result
+version: 4
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: jidou-hanbaiki-s2
+ownerDefinition:
+  definitionHash: df2b0c8477300cf0fbe25ad7a3ad58a33a9d9350ac8838baeb426b742c44df82
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.290Z'
+size: 2018
+checksum: 33842aa530e1cd9bd930502702111c363a1314c5eb489f3b148c22f1410f42e2

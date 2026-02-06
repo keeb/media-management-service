@@ -1,0 +1,30 @@
+id: e2f5f98b-c4c7-454a-8a22-58cb94aa6753
+workflowId: 1a85aeab-c733-4a09-81a2-873c525aaf6b
+workflowName: media-cleaner
+status: succeeded
+startedAt: '2026-01-31T19:21:57.339Z'
+completedAt: '2026-01-31T19:21:58.766Z'
+jobs:
+  - jobName: main
+    status: succeeded
+    startedAt: '2026-01-31T19:21:57.340Z'
+    completedAt: '2026-01-31T19:21:58.765Z'
+    steps:
+      - stepName: run-cleaner
+        status: succeeded
+        startedAt: '2026-01-31T19:21:57.340Z'
+        completedAt: '2026-01-31T19:21:58.765Z'
+        output:
+          stdout: >-
+            Checking current torrents...
+
+            need new session id, got
+            NYumg775Yw5ufjkGQC1M3vms2i1Bz1Qy13OXDFcCZEAEoSCt
+
+
+            Removing completed torrents...
+
+            Success!
+
+            Remaining torrents: 0
+          exitCode: 0

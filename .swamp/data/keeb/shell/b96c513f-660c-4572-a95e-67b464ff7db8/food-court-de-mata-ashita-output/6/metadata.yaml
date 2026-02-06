@@ -1,0 +1,18 @@
+id: 6ac79ac6-844f-4051-9d72-cac22f39cd52
+name: food-court-de-mata-ashita-output
+version: 6
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: step-output
+  workflow: anime-downloader
+  step: food-court-de-mata-ashita
+ownerDefinition:
+  definitionHash: eaa7785fb3f9d6056b010f1ae8ade72e857ea4f85533395826fe383848d6d176
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T20:23:00.760Z'
+size: 786
+checksum: abd61965595c5a28be201ce654e1cb709510beca9d0a3657a1dadd32b3750673

@@ -1,0 +1,16 @@
+id: 3fa9b0fc-a922-4ebc-ba71-2dd3cc151e0f
+name: food-court-de-mata-ashita-result
+version: 1
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: eaa7785fb3f9d6056b010f1ae8ade72e857ea4f85533395826fe383848d6d176
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:15.678Z'
+size: 966
+checksum: 247d13949f2292fa676eb4c60a2d3cd2297b296a3d67933fc2bcbe7d84b00659

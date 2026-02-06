@@ -1,0 +1,19 @@
+id: 99653077-4efe-4354-8726-fc06a102d5aa
+modelInputId: 14c2f100-8c59-4b8a-b62f-88f37ef6585a
+methodName: execute
+status: succeeded
+startedAt: '2026-01-30T12:17:32.550Z'
+retryCount: 0
+provenance:
+  inputHash: cad35547fc37494fd4fb18c03d329c421a85f9cd5068b434425dc6a5a94b3600
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: f0d0c066-fb1b-4a52-86ee-208281735433
+  stepName: mattaku-saikin-no-tantei
+completedAt: '2026-01-30T12:17:35.772Z'
+durationMs: 3222
+artifacts:
+  dataId: 14c2f100-8c59-4b8a-b62f-88f37ef6585a
+  logIds:
+    - 14c2f100-8c59-4b8a-b62f-88f37ef6585a

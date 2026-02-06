@@ -1,0 +1,16 @@
+id: 92508824-83c8-4cb1-8e24-e77c00acfa79
+name: futari-solo-camp-output
+version: 3
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: log
+ownerDefinition:
+  definitionHash: 3763bde5ab43426904105698f43c4de1671686dd916fc4fec6a104c1506622bb
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.350Z'
+size: 2079
+checksum: 8ac74a1f66044729c7e890f17d5d1d26e2ee4d8b6daccbc8a0078f8b88cf3c86

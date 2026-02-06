@@ -34,13 +34,13 @@ class Payload:
         self.images = None
         try:
             self._parse(payload)
-        except:
-            raise Exception("ur payload sux")
+        except (KeyError, AttributeError, TypeError) as e:
+            raise ValueError(f"invalid payload: {e}") from e
 
     def _parse(self, payload):
         try:
             self.unique_id = payload.get("_id")
-        except:
+        except AttributeError:
             # not from mongodb
             pass
 

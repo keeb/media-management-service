@@ -1,0 +1,19 @@
+id: 2e1c53d2-631a-4c39-b4ae-030e1dd5f3e3
+modelInputId: 8f1890e5-7391-4d2f-be9b-13bfe4eb3789
+methodName: execute
+status: succeeded
+startedAt: '2026-01-31T19:30:26.198Z'
+retryCount: 0
+provenance:
+  inputHash: a79b412f7229c127459981e2006606c2047d66ddb012bf250af795738cd8b5d4
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: def757be-aec7-40b4-a93b-eebc939229a3
+  stepName: dandadan
+completedAt: '2026-01-31T19:30:29.283Z'
+durationMs: 3085
+artifacts:
+  dataId: 8f1890e5-7391-4d2f-be9b-13bfe4eb3789
+  logIds:
+    - 8f1890e5-7391-4d2f-be9b-13bfe4eb3789

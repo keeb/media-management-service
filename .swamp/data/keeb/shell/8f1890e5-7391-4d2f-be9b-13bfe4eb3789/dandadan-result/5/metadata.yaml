@@ -1,0 +1,16 @@
+id: 474cb069-d897-4333-b6c4-b244ceb1ab1b
+name: dandadan-result
+version: 5
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: abdba5b38f8f802a4f069417cc9aa505f23b51e766dcf01f23624d42e55f6c56
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T20:23:00.891Z'
+size: 2058
+checksum: 1496deb8b320cdc8117ad01017f7f69890f836e361b38dc280a1b5d0e5840fc7

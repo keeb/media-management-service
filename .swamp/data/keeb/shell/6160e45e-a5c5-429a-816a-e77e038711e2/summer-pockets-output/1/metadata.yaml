@@ -1,0 +1,16 @@
+id: f14f71fe-3fce-442e-a970-9a9cee16ff15
+name: summer-pockets-output
+version: 1
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: log
+ownerDefinition:
+  definitionHash: 05db1d529966b98b795c770e3d035fb102563badb9db775925992da4b5a2784d
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:15.776Z'
+size: 2176
+checksum: 044a4ebbb7611c76f20d11f42b8c36945fecfb9b6bc357164e2189cd8eda0453

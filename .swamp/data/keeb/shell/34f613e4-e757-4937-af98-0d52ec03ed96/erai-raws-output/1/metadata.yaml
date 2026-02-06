@@ -1,0 +1,16 @@
+id: 07ce2893-846b-4043-b509-e476c4ed6754
+name: erai-raws-output
+version: 1
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: log
+ownerDefinition:
+  definitionHash: 2f7cdae2165e119ab08b6cee0fdf84204ebb4a89c148ec4c25b064b1b7139378
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:39:57.415Z'
+size: 36281
+checksum: c9d2c0e9e316746e1acf229639f3d2ed25ecd12a3a3043158fe652abf24eec85

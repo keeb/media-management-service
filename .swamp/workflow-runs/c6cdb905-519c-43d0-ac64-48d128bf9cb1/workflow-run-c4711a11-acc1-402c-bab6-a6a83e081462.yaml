@@ -1,0 +1,19 @@
+id: c4711a11-acc1-402c-bab6-a6a83e081462
+workflowId: c6cdb905-519c-43d0-ac64-48d128bf9cb1
+workflowName: run-llm
+status: succeeded
+startedAt: '2026-01-29T23:22:14.771Z'
+completedAt: '2026-01-29T23:22:16.556Z'
+jobs:
+  - jobName: main
+    status: succeeded
+    startedAt: '2026-01-29T23:22:14.772Z'
+    completedAt: '2026-01-29T23:22:16.555Z'
+    steps:
+      - stepName: run-media-worker
+        status: succeeded
+        startedAt: '2026-01-29T23:22:14.772Z'
+        completedAt: '2026-01-29T23:22:16.555Z'
+        output:
+          stdout: ''
+          exitCode: 0

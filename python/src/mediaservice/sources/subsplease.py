@@ -2,11 +2,14 @@
 SubsPlease anime episode search and download utilities.
 """
 
+import logging
 import re
 import json
 import requests
 
 from mediaservice.util.file import crawl_for_files, get_file_name
+
+logger = logging.getLogger(__name__)
 
 
 def search(query: str) -> dict:
@@ -22,7 +25,7 @@ def search(query: str) -> dict:
         query = query.replace(" ", "+")
 
     url = 'https://subsplease.org/api/?f=search&tz=America/Los_Angeles&s=' + query
-    print(f"\nSearching: {query}")
+    logger.info(f"Searching: {query}")
     response = requests.get(url)
     result = response.json()
 
@@ -50,7 +53,7 @@ def filter_results(results: dict, resolution: str = "1080") -> dict:
     """
     filtered = {}
     if isinstance(results, list):
-        print("No results found")
+        logger.info("No results found")
         return filtered
 
     for key in results.keys():
@@ -111,11 +114,11 @@ def filter_exists(filtered: dict, download_dir: str, key_identifier: str = None)
     Returns:
         Dictionary with existing episodes removed
     """
-    print(f"\nChecking directory: {download_dir}")
-    print(f"Show: {key_identifier}")
+    logger.info(f"Checking directory: {download_dir}")
+    logger.info(f"Show: {key_identifier}")
 
     existing_files = crawl_for_files(download_dir)
-    print(f"Found {len(existing_files)} existing files")
+    logger.info(f"Found {len(existing_files)} existing files")
 
     remaining = {}
 
@@ -132,35 +135,38 @@ def filter_exists(filtered: dict, download_dir: str, key_identifier: str = None)
                     normalized_filename = normalize(filename)
                     if normalized_identifier in normalized_filename:
                         exists = True
-                        print(f"Episode {episode_str} exists: {filename}")
+                        logger.info(f"Episode {episode_str} exists: {filename}")
                         break
                 else:
                     exists = True
-                    print(f"Episode {episode_str} exists: {filename}")
+                    logger.info(f"Episode {episode_str} exists: {filename}")
                     break
 
         if not exists:
-            print(f"Episode {episode_str} not found")
+            logger.info(f"Episode {episode_str} not found")
             remaining[episode] = magnet
 
     if remaining:
-        print(f"\nEpisodes to download: {list(remaining.keys())}")
+        logger.info(f"Episodes to download: {list(remaining.keys())}")
     else:
-        print("\nNo new episodes to download")
+        logger.info("No new episodes to download")
     return remaining
 
 
-def download_magnets(episodes: dict, endpoint: str = "http://hancock:9200/magnet"):
+def download_magnets(episodes: dict, endpoint: str = None):
     """Send magnet links to download endpoint.
 
     Args:
         episodes: Dictionary of episode -> magnet
-        endpoint: URL to POST magnet links to
+        endpoint: URL to POST magnet links to (defaults to MAGNET_ENDPOINT from config)
     """
-    for key, magnet in episodes.items():
-        print("Downloading " + magnet)
+    from mediaservice.download.magnets import download_magnets as _download
+    from mediaservice.config import MAGNET_ENDPOINT
 
-        header = {'Content-type': 'application/json'}
-        data = {"magnet": magnet}
-        response = requests.post(endpoint, data=json.dumps(data), headers=header)
-        print(response.text)
+    if endpoint is None:
+        endpoint = MAGNET_ENDPOINT
+
+    for key, magnet in episodes.items():
+        logger.info(f"Downloading episode {key}")
+
+    _download(list(episodes.values()), endpoint=endpoint)

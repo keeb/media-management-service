@@ -1,0 +1,19 @@
+id: b4ec96eb-5e7d-4d1a-8047-84e5f0f77eee
+modelInputId: 6160e45e-a5c5-429a-816a-e77e038711e2
+methodName: execute
+status: succeeded
+startedAt: '2026-02-01T11:00:19.395Z'
+retryCount: 0
+provenance:
+  inputHash: dce37d3db8ffb7b349425af4073284d5c2ae62c6fdb73eca94bf78a260c94b58
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 222821dd-9c70-442a-97ff-e392cec1a6b6
+  stepName: summer-pockets
+completedAt: '2026-02-01T11:00:22.521Z'
+durationMs: 3126
+artifacts:
+  dataId: 6160e45e-a5c5-429a-816a-e77e038711e2
+  logIds:
+    - 6160e45e-a5c5-429a-816a-e77e038711e2

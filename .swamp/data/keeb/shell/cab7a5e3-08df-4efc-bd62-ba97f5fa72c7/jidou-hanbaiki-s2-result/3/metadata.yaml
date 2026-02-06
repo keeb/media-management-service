@@ -1,0 +1,16 @@
+id: 48f83134-ac53-4781-ae66-87cb5a233651
+name: jidou-hanbaiki-s2-result
+version: 3
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: df2b0c8477300cf0fbe25ad7a3ad58a33a9d9350ac8838baeb426b742c44df82
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.289Z'
+size: 2018
+checksum: 33842aa530e1cd9bd930502702111c363a1314c5eb489f3b148c22f1410f42e2

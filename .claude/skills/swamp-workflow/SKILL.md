@@ -1,6 +1,6 @@
 ---
 name: swamp-workflow
-description: Work with swamp workflows for AI-native automation. Use when searching for workflows, creating new workflows, validating workflow definitions, or running workflows. Triggers on requests involving "swamp workflow", "workflow", "run workflow", or "create workflow".
+description: Work with swamp workflows for AI-native automation. Use when searching for workflows, creating new workflows, validating workflow definitions, running workflows, or viewing run history. Triggers on "swamp workflow", "workflow", "run workflow", "create workflow", "job", "step", "automate", "automation", "pipeline", "orchestrate", "run history", "execute workflow", "workflow logs", "workflow failure", "debug workflow".
 ---
 
 # Swamp Workflow Skill
@@ -10,29 +10,41 @@ machine-readable output.
 
 ## Quick Reference
 
-| Task              | Command                                       |
-| ----------------- | --------------------------------------------- |
-| Get schema        | `swamp workflow schema get --json`            |
-| Search workflows  | `swamp workflow search [query] --json`        |
-| Get a workflow    | `swamp workflow get <id_or_name> --json`      |
-| Create a workflow | `swamp workflow create <name> --json`         |
-| Validate workflow | `swamp workflow validate [id_or_name] --json` |
-| Run a workflow    | `swamp workflow run <id_or_name> --json`      |
+| Task              | Command                                                |
+| ----------------- | ------------------------------------------------------ |
+| Get schema        | `swamp workflow schema get --json`                     |
+| Search workflows  | `swamp workflow search [query] --json`                 |
+| Get a workflow    | `swamp workflow get <id_or_name> --json`               |
+| Create a workflow | `swamp workflow create <name> --json`                  |
+| Edit a workflow   | `swamp workflow edit [id_or_name]`                     |
+| Delete a workflow | `swamp workflow delete <id_or_name> --json`            |
+| Validate workflow | `swamp workflow validate [id_or_name] --json`          |
+| Run a workflow    | `swamp workflow run <id_or_name> --json`               |
+| View run history  | `swamp workflow history search --json`                 |
+| Get latest run    | `swamp workflow history get <workflow> --json`         |
+| View run logs     | `swamp workflow history logs <run_or_workflow> --json` |
+
+## Repository Structure
+
+Swamp uses a dual-layer architecture:
+
+- **Data directory (`/.swamp/`)** - Internal storage organized by entity type
+- **Logical views (`/workflows/`)** - Human-friendly symlinked directories
+
+```
+/workflows/{workflow-name}/
+  workflow.yaml → ../.swamp/workflows/{id}.yaml
+  runs/
+    latest → {most-recent-run}/
+    {timestamp}/
+      run.yaml → ../.swamp/workflow-runs/{id}/{run-id}.yaml
+```
+
+Use `swamp repo index` to rebuild if symlinks become out of sync.
 
 ## IMPORTANT: Always Get Schema First
 
 Before creating or editing a workflow file, ALWAYS get the schema first:
-
-```bash
-swamp workflow schema get --json
-```
-
-This ensures you understand the exact structure and constraints for valid
-workflow files.
-
-## Get Workflow Schema
-
-Get the complete JSON Schema for workflow files.
 
 ```bash
 swamp workflow schema get --json
@@ -52,84 +64,7 @@ swamp workflow schema get --json
 }
 ```
 
-**Key schemas:**
-
-- `workflow` - Top-level structure with id, name, description, jobs, version
-- `job` - Job definition with name, steps, dependsOn, weight
-- `jobDependency` - Job dependency with target job name and trigger condition
-- `step` - Step definition with name, task, dependsOn, weight
-- `stepDependency` - Step dependency with target step name and trigger condition
-- `stepTask` - Discriminated union: `type: "shell"` or `type: "model_method"`
-- `triggerCondition` - Conditions like `always`, `succeeded(ref)`,
-  `failed(ref)`, etc.
-
-## Search for Workflows
-
-Find existing workflows in the repository.
-
-```bash
-swamp workflow search --json
-swamp workflow search "deploy" --json
-```
-
-**Output shape:**
-
-```json
-{
-  "query": "",
-  "results": [
-    { "id": "abc-123", "name": "my-workflow", "jobCount": 2 }
-  ]
-}
-```
-
-Select the workflow whose `name` best matches the user's intent.
-
-## Get a Workflow
-
-Get full details of a specific workflow including jobs and steps.
-
-```bash
-swamp workflow get my-workflow --json
-```
-
-**Output shape:**
-
-```json
-{
-  "id": "abc-123",
-  "name": "my-workflow",
-  "version": 1,
-  "jobs": [
-    {
-      "name": "main",
-      "description": "Main job",
-      "steps": [
-        {
-          "name": "example",
-          "description": "Example step",
-          "task": {
-            "type": "shell",
-            "command": "echo",
-            "args": ["Hello!"]
-          }
-        }
-      ]
-    }
-  ],
-  "path": "workflows/workflow-abc-123.yaml"
-}
-```
-
-**Key fields:**
-
-- `jobs` - Array of jobs that run in the workflow
-- `steps` - Steps within each job (run sequentially by default)
-- `path` - File path to read/edit the workflow definition
-
 ## Create a Workflow
-
-Create a new workflow file.
 
 ```bash
 swamp workflow create my-deploy-workflow --json
@@ -147,16 +82,13 @@ swamp workflow create my-deploy-workflow --json
 
 After creation, edit the YAML file at the returned `path` to add jobs and steps.
 
-**Example workflow file structure:**
+**Example workflow file:**
 
 ```yaml
-# workflows/workflow-abc-123.yaml
-apiVersion: swamp/v1
-kind: Workflow
-metadata:
-  id: abc-123
-  name: my-deploy-workflow
-  version: 1
+id: abc-123
+name: my-deploy-workflow
+description: Deploy workflow with build and deploy jobs
+version: 1
 jobs:
   - name: build
     description: Build the application
@@ -169,7 +101,11 @@ jobs:
           args: ["task", "build"]
   - name: deploy
     description: Deploy the application
-    needs: [build]
+    dependsOn:
+      - job: build
+        condition:
+          type: succeeded
+          ref: build
     steps:
       - name: upload
         description: Upload artifacts
@@ -178,14 +114,42 @@ jobs:
           command: ./deploy.sh
 ```
 
+## Edit a Workflow
+
+Open workflow file in your editor.
+
+```bash
+swamp workflow edit my-workflow
+```
+
+Without arguments, shows a search interface to select a workflow.
+
+## Delete a Workflow
+
+Delete a workflow and all its run history.
+
+```bash
+swamp workflow delete my-workflow --json
+```
+
+**Output shape:**
+
+```json
+{
+  "deleted": true,
+  "workflowId": "abc-123",
+  "workflowName": "my-workflow",
+  "runsDeleted": 5
+}
+```
+
 ## Validate Workflows
 
-Validate a specific workflow or all workflows against their schemas.
-
-**Validate a single workflow:**
+Validate against schema and check for errors.
 
 ```bash
 swamp workflow validate my-workflow --json
+swamp workflow validate --json  # Validate all
 ```
 
 **Output shape (single):**
@@ -204,30 +168,7 @@ swamp workflow validate my-workflow --json
 }
 ```
 
-**Validate all workflows:**
-
-```bash
-swamp workflow validate --json
-```
-
-**Output shape (all):**
-
-```json
-{
-  "workflows": [
-    { "workflowId": "abc-123", "workflowName": "my-workflow", "validations": [...], "passed": true }
-  ],
-  "totalPassed": 1,
-  "totalFailed": 0,
-  "passed": true
-}
-```
-
-Always validate after editing a workflow file to catch errors early.
-
 ## Run a Workflow
-
-Execute a workflow and get execution results.
 
 ```bash
 swamp workflow run my-workflow --json
@@ -246,7 +187,14 @@ swamp workflow run my-workflow --json
       "name": "main",
       "status": "succeeded",
       "steps": [
-        { "name": "example", "status": "succeeded", "duration": 2 }
+        {
+          "name": "example",
+          "status": "succeeded",
+          "duration": 2,
+          "dataArtifacts": [
+            { "dataId": "data-789", "name": "output", "version": 1 }
+          ]
+        }
       ],
       "duration": 2
     }
@@ -256,25 +204,189 @@ swamp workflow run my-workflow --json
 }
 ```
 
-**Key fields:**
+## Workflow History
 
-- `status` - Overall workflow status: `succeeded`, `failed`, or `running`
-- `jobs[].status` - Individual job status
-- `jobs[].steps[].status` - Individual step status
-- `duration` - Execution time in milliseconds
-- `path` - Path to the workflow run log file
+### Search Run History
 
-After running, summarize results to the user including which jobs/steps
-succeeded or failed and their durations.
+Find workflow runs across all workflows.
+
+```bash
+swamp workflow history search --json
+swamp workflow history search "deploy" --json
+```
+
+**Output shape:**
+
+```json
+{
+  "query": "",
+  "results": [
+    {
+      "runId": "run-456",
+      "workflowId": "abc-123",
+      "workflowName": "my-workflow",
+      "status": "succeeded",
+      "startedAt": "2025-01-15T10:30:00Z",
+      "duration": 5
+    }
+  ]
+}
+```
+
+### Get Latest Run
+
+Get the most recent run for a specific workflow.
+
+```bash
+swamp workflow history get my-workflow --json
+```
+
+**Output shape:**
+
+```json
+{
+  "runId": "run-456",
+  "workflowId": "abc-123",
+  "workflowName": "my-workflow",
+  "status": "succeeded",
+  "startedAt": "2025-01-15T10:30:00Z",
+  "completedAt": "2025-01-15T10:30:05Z",
+  "jobs": [/* job execution details */]
+}
+```
+
+### View Run Logs
+
+View logs and output for a workflow run or specific step.
+
+```bash
+swamp workflow history logs my-workflow --json        # Latest run logs
+swamp workflow history logs run-456 --json            # Specific run logs
+swamp workflow history logs run-456 build.compile --json  # Specific step logs
+```
+
+**Output shape:**
+
+```json
+{
+  "runId": "run-456",
+  "step": "build.compile",
+  "logs": "Building application...\nCompilation complete.",
+  "exitCode": 0
+}
+```
+
+## Data Artifact Tracking
+
+Workflow steps track all Data artifacts produced during execution. Each step run
+includes a `dataArtifacts` array with references to created data.
+
+### Automatic Tagging
+
+Data created during workflow execution receives automatic tags:
+
+| Tag        | Value               | Description                      |
+| ---------- | ------------------- | -------------------------------- |
+| `type`     | `step-output`       | Identifies workflow-created data |
+| `workflow` | `{workflow-name}`   | Source workflow name             |
+| `step`     | `{job-name}.{step}` | Full step path                   |
+
+### Querying Workflow Data
+
+Use CEL expressions to find data from workflows:
+
+```yaml
+# Find all data from a specific workflow
+workflowOutputs: ${{ data.findByTag("workflow", "my-deploy") }}
+
+# Find data from a specific step
+stepData: ${{ data.findByTag("step", "build.compile") }}
+```
+
+## Expressions in Workflows
+
+Model inputs can contain CEL expressions using `${{ <expression> }}` syntax.
+
+### Automatic Dependency Resolution
+
+Expressions that reference `model.<name>.resource.attributes.*` create implicit
+step dependencies. The workflow engine automatically ensures dependent steps run
+in the correct order.
+
+```yaml
+jobs:
+  - name: main
+    steps:
+      - name: create-subnet # Runs second (depends on vpc)
+        task:
+          type: model_method
+          modelIdOrName: subnet-input
+          methodName: create
+      - name: create-vpc # Runs first
+        task:
+          type: model_method
+          modelIdOrName: vpc-input
+          methodName: create
+# If subnet-input has: vpcId: ${{ model.vpc-input.resource.attributes.vpcId }}
+# create-vpc runs first due to implicit dependency
+```
+
+### Environment Variables
+
+Access environment variables using the `env` namespace:
+
+```yaml
+attributes:
+  region: ${{ env.AWS_REGION }}
+  api_key: ${{ env.API_KEY }}
+```
+
+## Working with Vaults
+
+Access secrets in workflow steps using vault expressions. See **swamp-vault**
+skill for complete vault management.
+
+**Quick syntax:**
+
+```yaml
+# In step attributes
+apiKey: ${{ vault.get(vault-name, secret-key) }}
+dbPassword: ${{ vault.get(prod-secrets, DB_PASSWORD) }}
+```
+
+**Using the vault model** (`swamp/lets-get-sensitive`):
+
+```yaml
+- name: store-secret
+  task:
+    type: model_method
+    modelIdOrName: store-creds # type: swamp/lets-get-sensitive
+    methodName: put
+```
 
 ## Workflow Example
 
-End-to-end workflow for creating and running a new workflow:
+End-to-end workflow creation:
 
-1. **Get schema**: `swamp workflow schema get --json` (understand valid
-   structure)
-2. **Create** a new workflow: `swamp workflow create my-task --json`
-3. **Edit** the YAML file at the returned `path` to add jobs and steps
-4. **Validate** the workflow: `swamp workflow validate my-task --json`
-5. **Fix** any validation errors and re-validate
-6. **Run** the workflow: `swamp workflow run my-task --json`
+1. **Get schema**: `swamp workflow schema get --json`
+2. **Create**: `swamp workflow create my-task --json`
+3. **Edit**: Add jobs and steps to the YAML file
+4. **Validate**: `swamp workflow validate my-task --json`
+5. **Fix** any errors and re-validate
+6. **Run**: `swamp workflow run my-task --json`
+
+## When to Use Other Skills
+
+| Need                 | Use Skill               |
+| -------------------- | ----------------------- |
+| Create/run models    | `swamp-model`           |
+| Vault management     | `swamp-vault`           |
+| Repository structure | `swamp-repo`            |
+| Manage model data    | `swamp-data`            |
+| Create custom models | `swamp-extension-model` |
+
+## References
+
+- **Data chaining**: See
+  [references/data-chaining.md](references/data-chaining.md) for aws/cli model
+  workflow examples and chaining patterns

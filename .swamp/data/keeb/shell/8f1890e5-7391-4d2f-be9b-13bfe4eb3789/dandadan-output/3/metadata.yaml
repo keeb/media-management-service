@@ -1,0 +1,16 @@
+id: c6a84470-b957-42b5-9959-95e7b69ce083
+name: dandadan-output
+version: 3
+contentType: text/plain
+lifetime: infinite
+garbageCollection: 10
+streaming: true
+tags:
+  type: log
+ownerDefinition:
+  definitionHash: abdba5b38f8f802a4f069417cc9aa505f23b51e766dcf01f23624d42e55f6c56
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.463Z'
+size: 1879
+checksum: 105ca0ac8590b714385be4181f322e0d772f9ee9cdf826cd759581e080a488a1

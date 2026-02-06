@@ -1,0 +1,16 @@
+id: 3d5b0f2b-72bb-410b-b4f3-390941956716
+name: mattaku-saikin-no-tantei-result
+version: 3
+contentType: application/json
+lifetime: infinite
+garbageCollection: 10
+streaming: false
+tags:
+  type: data
+ownerDefinition:
+  definitionHash: a78198d69cb2bb17b67e75946ebcdfa0f07e4bca37e55aa81fef329a31dd21f8
+  ownerType: model-method
+  ownerRef: execute
+createdAt: '2026-02-06T19:43:31.300Z'
+size: 1618
+checksum: 87f565a8e4f30912b909ac3e259e88fcdbcb366d2b54e01b7ef906bbfc7ebceb

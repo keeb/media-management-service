@@ -2,12 +2,15 @@
 Image download utilities for SuicideGirls content.
 """
 
+import logging
 import os
 import requests
 
 from mediaservice.db.mongo import get_pending_queue, get_completed_jobs
 from mediaservice.sources.suicidegirls import Payload
 from mediaservice.util.file import check_folder
+
+logger = logging.getLogger(__name__)
 
 
 def download_image(url: str) -> bytes:
@@ -19,7 +22,7 @@ def download_image(url: str) -> bytes:
     Returns:
         Image data as bytes
     """
-    print("downloading: %s" % url)
+    logger.info(f"downloading: {url}")
     r = requests.get(url, allow_redirects=True)
     return r.content
 
@@ -44,10 +47,10 @@ def get_work() -> Payload:
     Raises:
         SystemExit: If no work available
     """
-    print("getting some work")
+    logger.info("getting some work")
     record = get_pending_queue().find_one()
     if record is None:
-        print("no work to do, exiting")
+        logger.info("no work to do, exiting")
         raise SystemExit(1)
     return Payload(record)
 
@@ -83,18 +86,17 @@ def complete_work(payload: Payload) -> None:
     jobs = get_completed_jobs()
 
     if not payload.mongo():
-        print("something is wrong this is not a mongo object")
+        logger.error("something is wrong this is not a mongo object")
         raise SystemExit(1)
 
     if pending.find_one({"_id": payload.unique_id}) is None:
-        print("this payload is not in the pending queue.. wtf?")
-        print(payload)
+        logger.warning(f"this payload is not in the pending queue: {payload}")
 
-    print("inserting into completed jobs collection")
+    logger.info("inserting into completed jobs collection")
     jobs.insert_one(payload.dict())
-    print("deleting from pending queue")
+    logger.info("deleting from pending queue")
     pending.delete_one({"_id": payload.unique_id})
-    print("done")
+    logger.info("done")
 
 
 def process_work(output_directory: str) -> None:
@@ -113,8 +115,7 @@ def process_work(output_directory: str) -> None:
     if not check_folder(model_path):
         os.mkdir(model_path)
     if check_folder(full_path):
-        print("something is wrong, this album already exists?")
-        print(work)
+        logger.error(f"something is wrong, this album already exists? {work}")
         raise SystemExit(1)
 
     os.mkdir(full_path)
@@ -122,18 +123,16 @@ def process_work(output_directory: str) -> None:
     count = 1
     total_images = len(work.images)
 
-    print("time to save some images")
-    print("saving to directory: %s" % full_path)
-    print("model name is: %s" % work.model)
-    print("album name is: %s" % work.album)
+    logger.info(f"saving to directory: {full_path}")
+    logger.info(f"model: {work.model}, album: {work.album}")
 
     for image in work.images:
         file_name = make_count(count, len(str(total_images)))
         full_file = os.path.join(full_path, file_name + ".jpg")
         count += 1
         data = download_image(image)
-        print("saving as: %s" % full_file)
+        logger.debug(f"saving as: {full_file}")
         save_image(full_file, data)
 
-    print("done saving")
+    logger.info("done saving")
     complete_work(work)

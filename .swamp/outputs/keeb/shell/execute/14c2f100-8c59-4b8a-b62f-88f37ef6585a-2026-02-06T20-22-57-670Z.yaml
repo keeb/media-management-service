@@ -1,0 +1,31 @@
+id: 82470b38-dde3-4177-8ae7-9c9b4d283e0c
+definitionId: 14c2f100-8c59-4b8a-b62f-88f37ef6585a
+methodName: execute
+status: succeeded
+startedAt: '2026-02-06T20:22:57.670Z'
+retryCount: 0
+provenance:
+  definitionHash: a78198d69cb2bb17b67e75946ebcdfa0f07e4bca37e55aa81fef329a31dd21f8
+  modelVersion: 1
+  triggeredBy: workflow
+  workflowId: a1281e44-d4d2-4b2f-9a84-86faee70e7b2
+  workflowRunId: 9d30bc0e-16d0-4dd2-9eae-8280b698b4ee
+  stepName: mattaku-saikin-no-tantei
+artifacts:
+  dataArtifacts:
+    - dataId: 7a08e0ef-a9fe-4031-819b-8ddbba6df37e
+      name: mattaku-saikin-no-tantei-result
+      version: 6
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: mattaku-saikin-no-tantei
+    - dataId: 589ecdd6-d11f-4014-8a6e-d69f513d9db4
+      name: mattaku-saikin-no-tantei-output
+      version: 6
+      tags:
+        type: step-output
+        workflow: anime-downloader
+        step: mattaku-saikin-no-tantei
+completedAt: '2026-02-06T20:23:00.686Z'
+durationMs: 3016
