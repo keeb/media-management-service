@@ -1,0 +1,30 @@
+id: 09f4d2c7-3cf6-44fe-9b38-6ee6946d6066
+name: deploy-mms-inventory
+description: Build mms-inventory container and deploy to 10.0.0.33
+tags: {}
+jobs:
+  - name: deploy
+    description: Build and deploy mms-inventory container
+    steps:
+      - name: build-and-transfer
+        description: Build Docker image and transfer to 10.0.0.33
+        task:
+          type: model_method
+          modelIdOrName: deploy-mms-image
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: verify
+        description: Smoke-test the container on 10.0.0.33
+        task:
+          type: model_method
+          modelIdOrName: verify-mms-container
+          methodName: execute
+        dependsOn:
+          - step: build-and-transfer
+            condition:
+              type: succeeded
+        weight: 0
+    dependsOn: []
+    weight: 0
+version: 1

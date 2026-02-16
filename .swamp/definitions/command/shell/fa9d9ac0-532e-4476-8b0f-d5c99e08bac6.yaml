@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: fa9d9ac0-532e-4476-8b0f-d5c99e08bac6
+name: deploy-mms-image
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: bash container/inventory/build.sh && docker save mms-inventory | ssh root@10.0.0.33 docker load
+      workingDir: /home/keeb/git/media-management-service

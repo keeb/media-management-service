@@ -44,3 +44,11 @@ PROMPTS_DIR = os.getenv("PROMPTS_DIR", "prompts")
 
 # LLM
 DEFAULT_LLM_MODEL = os.getenv("DEFAULT_LLM_MODEL", "qwen3:14b")
+
+# Jellyfin
+JELLYFIN_URL = os.getenv("JELLYFIN_URL", "http://10.0.0.12:8096")
+JELLYFIN_API_KEY = os.getenv("JELLYFIN_API_KEY", "")
+JELLYFIN_USER_ID = os.getenv("JELLYFIN_USER_ID", "")
+
+# Prometheus Pushgateway
+PUSHGATEWAY_URL = os.getenv("PUSHGATEWAY_URL", "http://10.0.0.12:9091")

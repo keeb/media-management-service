@@ -1,0 +1,16 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 4553ec14-5c31-4265-b23f-5da3d2b16f03
+name: configure-inventory-cron
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: |
+        ssh root@10.0.0.33 '
+          CRON_LINE="0 8 * * * docker run --rm --name mms-inventory mms-inventory >> /var/log/mms-inventory.log 2>&1"
+          (crontab -l 2>/dev/null | grep -v mms-inventory; echo "$CRON_LINE") | crontab -
+        '
+      workingDir: /home/keeb/git/media-management-service

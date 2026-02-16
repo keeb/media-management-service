@@ -1,7 +1,0 @@
-id: b61c6a85-eefb-40b1-9b4d-7bdecd7d113f
-name: futari-solo-camp
-version: 1
-tags: {}
-attributes:
-  run: ./dist/mms download subsplease futari-solo-camp --auto
-  workingDir: /home/keeb/git/media-management-service

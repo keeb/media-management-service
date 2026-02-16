@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 74714471-d836-4aa3-99ba-a92cd48cb4c7
+name: ao-no-miburo-s2
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease ao-no-miburo-s2 --auto
+      workingDir: /home/keeb/git/media-management-service

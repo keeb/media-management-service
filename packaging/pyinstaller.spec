@@ -44,6 +44,7 @@ a = Analysis(
         "mediaservice.cli.indexer",
         "mediaservice.cli.sg_worker",
         "mediaservice.cli.sg_scrape",
+        "mediaservice.cli.inventory",
         # Core modules
         "mediaservice.db.mongo",
         "mediaservice.db.indexer",
@@ -52,9 +53,10 @@ a = Analysis(
         "mediaservice.organize.mover",
         "mediaservice.organize.parse",
         "mediaservice.organize.classify",
-        "mediaservice.organize.filter",
         "mediaservice.sources.subsplease",
         "mediaservice.sources.erai_raws",
+        "mediaservice.sources.jellyfin",
+        "mediaservice.sources.prometheus",
         "mediaservice.util.file",
         "mediaservice.util.ollama",
         # Dependencies that might need explicit inclusion

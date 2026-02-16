@@ -161,7 +161,13 @@ def move_safely(src: str, dest: str) -> None:
         logger.info(f"Created directory structure: {dest_dir}")
 
         if final_dest_path.exists():
-            raise FileExistsError(f"Destination file already exists: {final_dest_path}")
+            if final_dest_path.stat().st_size == src_path.stat().st_size:
+                logger.warning(f"Duplicate file, removing staging copy: {src}")
+                src_path.unlink()
+                return
+            raise FileExistsError(
+                f"Destination file already exists with different size: {final_dest_path}"
+            )
 
         shutil.move(str(src_path), str(final_dest_path))
         logger.info(f"Successfully moved {src} to {final_dest_path}")
@@ -229,24 +235,20 @@ def process_job(db: Database, job: Dict[str, Any], prompts_dir: str = "prompts")
 
     try:
         if source_path.is_dir():
-            for file_path in source_path.iterdir():
-                if file_path.is_dir():
-                    logger.info(f"Deleting subdirectory: {file_path}")
-                    shutil.rmtree(file_path)
-                elif file_path.is_file():
-                    if ismovie(str(file_path)):
-                        file_json = filename_to_json(file_path.name, job_id, prompts_dir)
-                        save_path = find_save_path(file_json, file_path.name, job_id, prompts_dir)
-                        move_safely(str(file_path), save_path)
-                    else:
-                        logger.info(f"Deleting non-video file: {file_path}")
-                        file_path.unlink()
+            video_files = [f for f in source_path.rglob("*") if f.is_file() and ismovie(str(f))]
 
-            try:
-                source_path.rmdir()
-                logger.info(f"Removed empty directory: {source_path}")
-            except OSError as e:
-                logger.warning(f"Could not remove directory {source_path}: {e}")
+            if not video_files:
+                logger.warning(f"No video files found in {source_path}")
+
+            for file_path in video_files:
+                file_json = filename_to_json(file_path.name, job_id, prompts_dir)
+                save_path = find_save_path(file_json, file_path.name, job_id, prompts_dir)
+                move_safely(str(file_path), save_path)
+
+            # Clean up: remove the entire staging directory after moving videos
+            if source_path.exists():
+                shutil.rmtree(source_path)
+                logger.info(f"Cleaned up staging directory: {source_path}")
         elif source_path.is_file():
             file_json = filename_to_json(filename, job_id, prompts_dir)
             save_path = find_save_path(file_json, filename, job_id, prompts_dir)

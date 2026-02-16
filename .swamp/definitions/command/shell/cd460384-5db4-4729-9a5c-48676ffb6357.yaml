@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: cd460384-5db4-4729-9a5c-48676ffb6357
+name: 29-sai-dokushin-chuuken-boukensha-no-nichijou
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease 29-sai-dokushin-chuuken-boukensha-no-nichijou --auto
+      workingDir: /home/keeb/git/media-management-service

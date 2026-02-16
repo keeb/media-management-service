@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: d6634505-4f23-4f43-9159-5a8672ea7d58
+name: golden-kamuy
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease golden-kamuy --auto
+      workingDir: /home/keeb/git/media-management-service

@@ -1,0 +1,7 @@
+id: 86aec9ce-6b14-44ba-a630-4a0f673798ed
+name: homelab
+type: local_encryption
+config:
+  auto_generate: true
+  base_dir: /home/keeb/git/media-management-service
+createdAt: '2026-02-16T06:55:24.455Z'

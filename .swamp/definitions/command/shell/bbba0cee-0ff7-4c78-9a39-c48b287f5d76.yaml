@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: bbba0cee-0ff7-4c78-9a39-c48b287f5d76
+name: kaya-chan-wa-kowakunai
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease kaya-chan-wa-kowakunai --auto
+      workingDir: /home/keeb/git/media-management-service

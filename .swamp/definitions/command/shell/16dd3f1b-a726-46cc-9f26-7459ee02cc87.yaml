@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 16dd3f1b-a726-46cc-9f26-7459ee02cc87
+name: fate-strange-fake
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease fate-strange-fake --auto
+      workingDir: /home/keeb/git/media-management-service

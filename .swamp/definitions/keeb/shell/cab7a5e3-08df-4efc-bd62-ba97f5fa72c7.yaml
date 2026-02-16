@@ -1,9 +1,0 @@
-id: cab7a5e3-08df-4efc-bd62-ba97f5fa72c7
-name: jidou-hanbaiki-s2
-version: 1
-tags: {}
-attributes:
-  run: >-
-    ./dist/mms download subsplease
-    jidou-hanbaiki-ni-umarekawatta-ore-wa-meikyuu-wo-samayou-s2 --auto
-  workingDir: /home/keeb/git/media-management-service

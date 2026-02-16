@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: d577268c-93f3-473d-93da-ebef759cf54f
+name: akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru --auto
+      workingDir: /home/keeb/git/media-management-service

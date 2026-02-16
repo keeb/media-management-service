@@ -8,13 +8,9 @@ jobs:
       - name: run-media-worker
         description: Run media-worker with MongoDB environment variables
         task:
-          type: shell
-          command: ./dist/mms
-          args:
-            - worker
-          env:
-            MONGO_HOST: "10.0.0.12"
-            MONGO_DATABASE: "media"
+          type: model_method
+          modelIdOrName: run-llm
+          methodName: execute
         dependsOn: []
         weight: 0
     dependsOn: []

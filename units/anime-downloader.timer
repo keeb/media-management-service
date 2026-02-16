@@ -1,8 +1,9 @@
 [Unit]
-Description=Run anime-downloader daily at 3am
+Description=Run anime-downloader twice daily at 3am and noon
 
 [Timer]
 OnCalendar=*-*-* 03:00:00
+OnCalendar=*-*-* 12:00:00
 Persistent=true
 
 [Install]

@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 4fc0571f-f0bf-499c-b237-17d410ed55a8
+name: sousou-no-frieren-s2
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease sousou-no-frieren-s2 --auto
+      workingDir: /home/keeb/git/media-management-service

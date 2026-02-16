@@ -1,0 +1,11 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 1efc937f-1743-485d-ae38-f507665da319
+name: mizuzokusei-no-mahoutsukai
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease mizuzokusei-no-mahoutsukai --auto
+      workingDir: /home/keeb/git/media-management-service

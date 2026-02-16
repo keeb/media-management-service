@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 7df88d62-c342-4119-97d0-c64e4a0097c7
+name: majutsushi-kunon-wa-mieteiru
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease majutsushi-kunon-wa-mieteiru --auto
+      workingDir: /home/keeb/git/media-management-service

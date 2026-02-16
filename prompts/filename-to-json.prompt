@@ -32,6 +32,8 @@ Return JSON with these fields:
 These rules OVERRIDE the default season detection:
 - "Jujutsu Kaisen - Shimetsu Kaiyuu" or "Jujutsu Kaisen: Shimetsu Kaiyuu" → season: 3
 - "Jujutsu Kaisen 2nd Season" → season: 2
+- "Sousou no Frieren" or "Frieren" with "2nd Season" or "Season 2" → title: "Sousou no Frieren", season: 2
+- "Ao no Miburo" with "2nd Season" or "Season 2" → title: "Ao no Miburo", season: 2
 - Any anime with "2nd Season" in the title → season: 2
 - Any anime with "3rd Season" in the title → season: 3
 

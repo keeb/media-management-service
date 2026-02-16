@@ -1,0 +1,11 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 34f613e4-e757-4937-af98-0d52ec03ed96
+name: erai-raws
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download erai --config erai-raws-shows.yaml --auto
+      workingDir: /home/keeb/git/media-management-service

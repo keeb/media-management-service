@@ -1,7 +1,0 @@
-id: cb0fd88f-f842-496a-9c63-f3e3959d6eba
-name: gachiakuta
-version: 1
-tags: {}
-attributes:
-  run: ./dist/mms download subsplease gachiakuta --auto
-  workingDir: /home/keeb/git/media-management-service

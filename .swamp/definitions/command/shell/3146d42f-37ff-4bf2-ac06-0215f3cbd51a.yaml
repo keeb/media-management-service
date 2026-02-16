@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 3146d42f-37ff-4bf2-ac06-0215f3cbd51a
+name: okiraku-ryoushu-no-tanoshii-ryouchi-bouei
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease okiraku-ryoushu-no-tanoshii-ryouchi-bouei --auto
+      workingDir: /home/keeb/git/media-management-service

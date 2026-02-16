@@ -1,0 +1,11 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 54603d0a-be28-4257-ab0c-353d6516002f
+name: jujutsu
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease jujutsu --auto
+      workingDir: /home/keeb/git/media-management-service

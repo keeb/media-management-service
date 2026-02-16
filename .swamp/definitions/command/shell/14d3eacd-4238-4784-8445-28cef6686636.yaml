@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 14d3eacd-4238-4784-8445-28cef6686636
+name: verify-mms-container
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ssh root@10.0.0.33 'docker run --rm --name mms-inventory-test mms-inventory'
+      workingDir: /home/keeb/git/media-management-service

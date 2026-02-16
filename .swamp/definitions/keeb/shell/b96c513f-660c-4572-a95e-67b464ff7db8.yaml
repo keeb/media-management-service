@@ -1,7 +1,0 @@
-id: b96c513f-660c-4572-a95e-67b464ff7db8
-name: food-court-de-mata-ashita
-version: 1
-tags: {}
-attributes:
-  run: ./dist/mms download subsplease food-court-de-mata-ashita --auto
-  workingDir: /home/keeb/git/media-management-service

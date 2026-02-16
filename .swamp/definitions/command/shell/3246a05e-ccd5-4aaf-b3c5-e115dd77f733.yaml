@@ -1,0 +1,14 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 3246a05e-ccd5-4aaf-b3c5-e115dd77f733
+name: run-llm
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms worker
+      workingDir: /home/keeb/git/media-management-service
+      env:
+        MONGO_HOST: "10.0.0.12"
+        MONGO_DATABASE: "media"

@@ -99,6 +99,126 @@ jobs:
           methodName: execute
         dependsOn: []
         weight: 0
+      - name: jujutsu
+        description: Download jujutsu kaisen
+        task:
+          type: model_method
+          modelIdOrName: jujutsu
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: golden-kamuy
+        description: Download golden-kamuy
+        task:
+          type: model_method
+          modelIdOrName: golden-kamuy
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: 29-sai-dokushin-chuuken-boukensha-no-nichijou
+        description: Download 29-sai-dokushin-chuuken-boukensha-no-nichijou
+        task:
+          type: model_method
+          modelIdOrName: 29-sai-dokushin-chuuken-boukensha-no-nichijou
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: arne-no-jikenbo
+        description: Download arne-no-jikenbo
+        task:
+          type: model_method
+          modelIdOrName: arne-no-jikenbo
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: okiraku-ryoushu-no-tanoshii-ryouchi-bouei
+        description: Download okiraku-ryoushu-no-tanoshii-ryouchi-bouei
+        task:
+          type: model_method
+          modelIdOrName: okiraku-ryoushu-no-tanoshii-ryouchi-bouei
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: odayaka-kizoku-no-kyuuka-no-susume
+        description: Download odayaka-kizoku-no-kyuuka-no-susume
+        task:
+          type: model_method
+          modelIdOrName: odayaka-kizoku-no-kyuuka-no-susume
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: shibou-yuugi-de-meshi-wo-kuu
+        description: Download shibou-yuugi-de-meshi-wo-kuu
+        task:
+          type: model_method
+          modelIdOrName: shibou-yuugi-de-meshi-wo-kuu
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: sousou-no-frieren-s2
+        description: Download sousou-no-frieren-s2
+        task:
+          type: model_method
+          modelIdOrName: sousou-no-frieren-s2
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: ao-no-miburo-s2
+        description: Download ao-no-miburo-s2
+        task:
+          type: model_method
+          modelIdOrName: ao-no-miburo-s2
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: trigun-stargaze
+        description: Download trigun-stargaze
+        task:
+          type: model_method
+          modelIdOrName: trigun-stargaze
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: fate-strange-fake
+        description: Download fate-strange-fake
+        task:
+          type: model_method
+          modelIdOrName: fate-strange-fake
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: yuusha-no-kuzu
+        description: Download yuusha-no-kuzu
+        task:
+          type: model_method
+          modelIdOrName: yuusha-no-kuzu
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: kaya-chan-wa-kowakunai
+        description: Download kaya-chan-wa-kowakunai
+        task:
+          type: model_method
+          modelIdOrName: kaya-chan-wa-kowakunai
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: majutsushi-kunon-wa-mieteiru
+        description: Download majutsushi-kunon-wa-mieteiru
+        task:
+          type: model_method
+          modelIdOrName: majutsushi-kunon-wa-mieteiru
+          methodName: execute
+        dependsOn: []
+        weight: 0
+      - name: akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru
+        description: Download akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru
+        task:
+          type: model_method
+          modelIdOrName: akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru
+          methodName: execute
+        dependsOn: []
+        weight: 0
     dependsOn: []
     weight: 0
 version: 1

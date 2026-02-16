@@ -1,0 +1,19 @@
+id: 3d1c69dc-e541-4320-9204-7d819ddb987a
+name: configure-inventory-cron
+description: Configure daily mms-inventory cron on 10.0.0.33
+tags: {}
+jobs:
+  - name: setup
+    description: Configure cron job on remote host
+    steps:
+      - name: add-cron
+        description: Add mms-inventory cron entry
+        task:
+          type: model_method
+          modelIdOrName: configure-inventory-cron
+          methodName: execute
+        dependsOn: []
+        weight: 0
+    dependsOn: []
+    weight: 0
+version: 1

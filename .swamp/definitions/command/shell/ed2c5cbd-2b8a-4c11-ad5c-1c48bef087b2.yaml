@@ -1,0 +1,11 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: ed2c5cbd-2b8a-4c11-ad5c-1c48bef087b2
+name: yofukashi-no-uta-s2
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease yofukashi-no-uta-s2 --auto
+      workingDir: /home/keeb/git/media-management-service

@@ -1,0 +1,17 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: f6532e0c-3d3e-45c8-a602-70fc20e83652
+name: inventory-scan
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms inventory scan --json-output --push-metrics
+      workingDir: /home/keeb/git/media-management-service
+      env:
+        JELLYFIN_URL: "http://10.0.0.12:8096"
+        JELLYFIN_API_KEY: "${{ vault.get(homelab, jellyfin-api-key) }}"
+        JELLYFIN_USER_ID: "6b6e605e26d04513bbb848c2bdce14f4"
+        PUSHGATEWAY_URL: "http://10.0.0.12:9091"

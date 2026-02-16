@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 991cb1d3-a7c1-4ce1-b7c7-44f3947e0b91
+name: trigun-stargaze
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease trigun-stargaze --auto
+      workingDir: /home/keeb/git/media-management-service

@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 73f27339-8c5f-4eb8-a8a2-04507c529994
+name: yuusha-no-kuzu
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease yuusha-no-kuzu --auto
+      workingDir: /home/keeb/git/media-management-service

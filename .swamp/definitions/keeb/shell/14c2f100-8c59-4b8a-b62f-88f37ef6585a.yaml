@@ -1,7 +1,0 @@
-id: 14c2f100-8c59-4b8a-b62f-88f37ef6585a
-name: mattaku-saikin-no-tantei
-version: 1
-tags: {}
-attributes:
-  run: ./dist/mms download subsplease mattaku-saikin-no-tantei-to-kitara --auto
-  workingDir: /home/keeb/git/media-management-service

@@ -1,0 +1,19 @@
+id: 4d54262a-a48e-45cd-87fc-ee408eac649f
+name: media-inventory
+description: Scan Jellyfin library inventory and push metrics to Prometheus
+tags: {}
+jobs:
+  - name: scan
+    description: Scan Jellyfin and push inventory metrics
+    steps:
+      - name: inventory-scan
+        description: Run mms inventory scan with metrics push
+        task:
+          type: model_method
+          modelIdOrName: inventory-scan
+          methodName: execute
+        dependsOn: []
+        weight: 0
+    dependsOn: []
+    weight: 0
+version: 1

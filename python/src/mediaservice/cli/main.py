@@ -15,6 +15,7 @@ from mediaservice.cli.erai_raws_dl import erai_cmd
 from mediaservice.cli.indexer import index_cmd
 from mediaservice.cli.sg_worker import sg_worker_cmd
 from mediaservice.cli.sg_scrape import sg_scrape_cmd
+from mediaservice.cli.inventory import inventory_cmd
 
 
 @click.group()
@@ -28,6 +29,7 @@ def cli():
 cli.add_command(worker_cmd, name="worker")
 cli.add_command(clean_cmd, name="clean")
 cli.add_command(index_cmd, name="index")
+cli.add_command(inventory_cmd, name="inventory")
 
 
 # Create download group for subsplease and erai

@@ -1,7 +1,0 @@
-id: 9e06e50f-109d-4d7f-9f53-bc7aefe3cfbb
-name: clevatess
-version: 1
-tags: {}
-attributes:
-  run: ./dist/mms download subsplease clevatess --auto
-  workingDir: /home/keeb/git/media-management-service

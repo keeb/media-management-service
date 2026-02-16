@@ -1,0 +1,11 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: 6160e45e-a5c5-429a-816a-e77e038711e2
+name: summer-pockets
+version: 1
+tags: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease summer-pockets --auto
+      workingDir: /home/keeb/git/media-management-service

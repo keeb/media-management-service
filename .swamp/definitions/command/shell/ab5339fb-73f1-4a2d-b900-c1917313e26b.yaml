@@ -1,0 +1,12 @@
+type: command/shell
+typeVersion: 2026.02.09.1
+id: ab5339fb-73f1-4a2d-b900-c1917313e26b
+name: odayaka-kizoku-no-kyuuka-no-susume
+version: 1
+tags: {}
+globalArguments: {}
+methods:
+  execute:
+    arguments:
+      run: ./dist/mms download subsplease odayaka-kizoku-no-kyuuka-no-susume --auto
+      workingDir: /home/keeb/git/media-management-service

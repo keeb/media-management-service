@@ -8,10 +8,9 @@ jobs:
       - name: run-cleaner
         description: Run media-cleaner to remove completed torrents
         task:
-          type: shell
-          command: ./dist/mms
-          args:
-            - clean
+          type: model_method
+          modelIdOrName: media-cleaner
+          methodName: execute
         dependsOn: []
         weight: 0
     dependsOn: []
